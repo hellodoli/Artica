@@ -1,0 +1,17 @@
+extends _layouts/home
+
+block head_end
+	link(rel="stylesheet", href="lib/css/owl.carousel.min.css")
+	link(rel="stylesheet", href="lib/css/revolution-slider.css")
+	link(rel="stylesheet" href="css/animate.css")
+	link(rel="stylesheet" href="css/style.css")
+	
+block content
+	include _partials/header
+	include _partials/home/home-1/index
+	include _partials/footer
+
+block body_end
+	script(type="text/javascript", src="lib/js/owl.carousel.min.js")
+	script(type="text/javascript", src="lib/js/revolution.min.js")
+	script(type="text/javascript", src="js/script.js")

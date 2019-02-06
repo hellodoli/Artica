@@ -1,0 +1,52 @@
+//- Mixin navigation menu
+//- =====================
+mixin list_navigation(list, isCollapse= false)
+    - var klassCollapse = (isCollapse === true) ? ' collapse' : '';
+    ul(class='ar-navbar-menu sf-menu' +  klassCollapse)
+        each item in list
+            - var klassActive = (item.isActive === true) ? ' current' : '';
+            - var klassHasChild = (typeof item.sub !== 'undefined') ? ' menu-item-has-children' : '';
+            li(class= 'menu-item' + klassActive + klassHasChild)
+                a(class="link", href="#")
+                    span= item.content
+                if klassHasChild === ' menu-item-has-children'
+                    ul(class= 'sub-menu' +  klassCollapse)
+                        each subitem in item.sub
+                            //- Sub has 1 level.
+                            if typeof subitem === 'string'
+                                li(class= 'menu-item')
+                                    a(class= 'link', href="#")= subitem
+                            //- Sub has > 1 level.
+                            else if typeof subitem === 'object'
+                                each v,k in subitem
+                                    li(class= 'menu-item menu-item-has-children')
+                                        a(class= 'link', href="#")= k
+                                        ul(class= 'sub-menu' + klassCollapse)
+                                            each vv in v
+                                                li(class= 'menu-item')
+                                                    a(class= 'link', href="#")= vv
+
+//- Mixin social menu
+//- =====================
+mixin list_social(list, bonus_class= '')
+    - var klass = (bonus_class !== '') ? ` ${bonus_class}` : ''
+    ul(class= 'ar-social-media-list' + klass)
+        each item in list
+            li.ar-social-media-item
+                a.ar-social-media-link(href="#")
+                    i(class= item.icon)
+                    | #{item.content}
+
+mixin temp
+  .rev_slider_wrapper
+    // the ID here will be used in the JavaScript below to initialize the slider
+    #rev_slider_1.rev_slider(data-version='5.4.8', style='display:none')
+      ul
+        // MINIMUM SLIDE STRUCTURE
+        li(data-transition='fade')
+          // SLIDE'S MAIN BACKGROUND IMAGE
+          img.rev-slidebg(src='img/banner/banner.jpg', alt='Sky')
+        // MINIMUM SLIDE STRUCTURE
+        li(data-transition='fade')
+          // SLIDE'S MAIN BACKGROUND IMAGE
+          img.rev-slidebg(src='img/banner/banner-3.jpg', alt='Ocean')

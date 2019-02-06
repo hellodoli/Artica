@@ -1,0 +1,21 @@
+.ar-cart{
+    display: inline-flex;
+    position: relative;
+    color: $color-gray-light-3;
+    cursor: pointer;
+
+    .count{
+        position: absolute;
+        right: -12px;
+        top: -8px;
+        font-size: rem(10px);
+        font-weight: bold;
+        width: 16px; 
+        height: 16px; 
+        line-height: 16px;
+        color: #fffaf4;
+        background-color: $color-primary;
+        border-radius: 50%;
+        text-align: center;
+    }
+}

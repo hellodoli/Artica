@@ -1,0 +1,44 @@
+include ../mixin
+-
+    var list_carousel = [
+        {src: 'img/gallery/chef-1.jpg', name: 'ELena Gilbert',position: 'Master Chef & Founder'},
+        {src: 'img/gallery/chef-2.jpg', name: 'Rick Grimes',position: 'Cheef Cook'},
+        {src: 'img/gallery/chef-3.jpg', name: 'ELena Gilbert',position: 'Master Chef & Founder'},
+        {src: 'img/gallery/chef-2.jpg', name: 'Rick Grimes',position: 'Cheef Cook'},
+    ];
+-
+    var list_social = [
+        {icon: 'fab fa-facebook-f',content: ''},
+        {icon: 'fab fa-twitter',content: ''},
+        {icon: 'fab fa-linkedin-in',content: ''},
+        {icon: 'fab fa-instagram',content: ''},
+        {icon: 'fab fa-vimeo',content: ''}
+    ];
+mixin carousel
+    .ar-carousel.ar-carousel-image-center(data-owl-show="3",data-owl-dots="false")
+        .owl-carousel.ar-delicious-list
+            each item,index in list_carousel
+                .slide
+                    .ar-delicious-item
+                        .ar-delicious-item--top
+                            .ar-item-image-holder
+                                img.ar-item-image.rounded-circle(src= item.src, alt="delicous-image-"+(index+1))
+                                .ar-delicious-item-overlay
+                                    +list_social(list_social)
+                        .ar-delicious-item--bottom.text-center.pt-xsmall
+                            .ar-delicious-item-name.mb-xsmall
+                                h4.ar-text-des.ar-text-des--black= item.name
+                            .ar-delicious-item-position= item.position
+
+
+section.ar-section.ar-delicious
+    .ar-full-width-wrapper
+        .container
+            .ar-delicious-wrapper
+                .ar-delicious-heading
+                    .ar-heading-wrapper.text-center
+                        h2.ar-heading.ar-heading--style-1 Our Delicious
+                        h3.ar-heading.ar-heading--style-2 Meet Our Passionate Chefs
+                .ar-delicious-body
+                    +carousel
+                            

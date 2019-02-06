@@ -1,0 +1,24 @@
+-
+    var list_carousel = [
+        {src: 'img/gallery/1.jpg', title: 'Masala Spiced Chickpeas'},
+        {src: 'img/gallery/2.jpg', title: 'Masala Spiced Chickpeas'},
+        {src: 'img/gallery/3.jpg', title: 'Masala Spiced Chickpeas'}
+    ];
+
+mixin carousel
+    .ar-carousel(data-owl-show= "3", data-owl-margin = "10", data-owl-dots = "false", data-owl-nav= "false")
+        .owl-carousel.ar-gallery-list
+            each item,index in list_carousel
+                .slide
+                    a(href="#").ar-gallery-item.d-block
+                        h4.ar-gallery-item-title.ar-text-des.ar-text-des--white= `${item.title } ${(index+1)}`
+                        img.ar-item-image(src= item.src, alt="gallery-image-slide-"+(index+1))
+
+
+section.ar-section.ar-gallery
+    .ar-full-width-wrapper
+        .ar-gallery-inner
+            .ar-gallery-wrapper
+                +carousel
+            
+

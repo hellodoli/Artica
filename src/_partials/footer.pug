@@ -1,0 +1,101 @@
+- var list_links = ['About Company','Reservation','Help Center','Our Blog','Careers','Contact Us'];
+- var list_info = [{duration: 'Mon — Fri', start: '9:00', end: '23:00'},{duration: 'Mon — Fri', start: '9:00', end: '23:00'},{duration: 'Mon — Fri', start: '9:00', end: '23:00'}];
+- var list_about = [{icon: 'fas fa-location-arrow',des: 'Address : 44 New Design Street, Melbourne 005'},{icon: 'fas fa-phone',des: 'Phone : (01) 800 433 633'},{icon:'fas fa-envelope', des:'Email : info@Example.com'}];
+-
+    var list_post = [
+        {src: 'img/blog/post-thumb-1.jpg', date: '25th June 2018', title: 'Peaceful Hostel'},
+        {src: 'img/blog/post-thumb-2.jpg', date: '25th June 2018', title: 'Peaceful Hostel'},
+        {src: 'img/blog/post-thumb-3.jpg', date: '25th June 2018', title: 'Peaceful Hostel'},
+    ];
+
+-
+    var widget = {
+        link: 'links-widget',
+        about: 'about-widget',
+        opening: 'opening-widget',
+        post: 'post-widget'
+    };
+
+mixin widget_footer_links(list= list_links)
+    ul.sf-menu.list
+        each item in list
+            li
+                a(href="#")= item
+
+mixin widget_footer_opening(list= list_info)
+    ul.sf-menu.list.opening-list
+        each item in list
+            li
+                span
+                    time= item.duration
+                span
+                    time(datetime= item.start)= `${item.start} am`
+                    |  - 
+                    time(datetime= item.end)= `${item.end} pm`
+
+mixin widget_footer_about(list= list_about)
+    .widget-des.mb-small
+        | Marsh mallow muffin soufflé jelly-o tart cake Marshmallow macaroon jelly jubes dont tiramisu croissant cake.
+    ul.sf-menu.list.about-list
+        each item in list
+            li
+                span.icon
+                    i(class= item.icon)
+                span= item.des
+
+mixin widget_footer_post(list= list_post)
+    .post-list
+        each item,index in list
+            .post-item
+                .post-item--left
+                    .ar-item-image-holder
+                        img.ar-item-image(src= item.src, alt="post-item-image"+"-"+(index+1))
+                    a(href="#").post-item-overlay
+                        i.fas.fa-link
+                .post-item--right
+                    a(href="#").post-item-title= item.title
+                    .post-item-time= item.date
+
+mixin widget_footer(type, title= 'logo')
+    div(class= "footer-widget " + type)
+        //- logo, title
+        if title !== 'logo'
+            .widget-title= title
+        else
+            .ar-footer-logo.mb-small
+                a(href="#")
+                    img.img-fluid(src= 'img/logo/footer-logo.png')
+        //- content
+        .widget-content
+            if type === widget.link
+                +widget_footer_links
+            else if type === widget.opening
+                +widget_footer_opening
+            else if type === widget.about
+                +widget_footer_about
+            else if type === widget.post
+                +widget_footer_post
+
+
+footer.ar-footer.ar-footer--dark
+    // START: footer top
+    .ar-footer-top
+        .container
+            .ar-section
+                .ar-footer-wrapper
+                    .ar-list-block.ar-column-4
+                        .col-footer.item
+                            +widget_footer(widget.about)
+                        .col-footer.item
+                            +widget_footer(widget.link,'USEFULL LINKS')
+                        .col-footer.item
+                            +widget_footer(widget.post,'LATEST BLOG POST')
+                        .col-footer.item
+                            +widget_footer(widget.opening,'OPENING HOURS')
+    // START: footer bottom
+    .ar-footer-bottom
+        .container
+            .ar-section
+                .ar-footer-wrapper
+                    p.copy-text.text-center Copyright © 2019. All Rights Reserved
+

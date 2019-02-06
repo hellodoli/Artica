@@ -1,0 +1,33 @@
+-
+    var list_service = [
+        {src: 'img/service/services-1.png', title: 'Pan Pizza', des: 'Vivamus sed fermentum tellus. Donec quis elit sapien. Aliquam commodo tortor nisi, nec varius mi finibus at.  ut ullamcorper volutpat lectusu'},
+        {src: 'img/service/services-2.png', title: 'Burger',des: 'Vivamus sed fermentum tellus. Donec quis elit sapien. Aliquam commodo tortor nisi, nec varius mi finibus at. ut ullamcorper volutpat lectusu'},
+        {src: 'img/service/services-3.png', title: 'Fish',des: 'Vivamus sed fermentum tellus. Donec quis elit sapien. Aliquam commodo tortor nisi, nec varius mi finibus at. ut ullamcorper volutpat lectusu'}
+    ];
+
+mixin list_service(list)
+    .ar-service-list
+        .ar-list-block.ar-column-3
+            each item,index in list
+                .item
+                    .ar-service-item
+                        .ar-service-item--top
+                            .ar-item-image-holder
+                                img.ar-item-image.img-fluid(src= item.src, alt="service-image" +"-"+ (index+1))
+                        .ar-service-item--bottom.pt-xsmall.text-center
+                            .ar-service-item-title.mb-xsmall
+                                h4.ar-text-des.ar-text-des--black= item.title
+                            .ar-service-item-des.mb-small
+                                p.ar-text-paragraph= item.des
+                            a.ar-btn.ar-btn--link(href="#") Read More
+
+section.ar-section.ar-service
+    .ar-full-width-wrapper
+        .container
+            .ar-service-wrapper
+                .ar-service-heading
+                    .ar-heading-wrapper.text-center
+                        h2.ar-heading.ar-heading--style-1 Our Services
+                        h3.ar-heading.ar-heading--style-2 We Create Delicous Memory
+                .ar-service-body
+                    +list_service(list_service)

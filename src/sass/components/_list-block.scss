@@ -1,0 +1,98 @@
+$flex: (100% 50% 33.333333% 25%);
+
+.ar-list-block{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 rem(-15px);
+    & > .item{
+        margin-top: rem(30px);// default is mg-medium
+        padding: 0 rem(15px);
+        width: 100%;  
+    }
+    &.ar-mg-small{
+        & > .item{
+            margin-top: rem(20px);
+        }
+    }
+    &.ar-column-1{
+        & > .item{
+            &:nth-child(-n + 1){
+                margin-top: 0;
+            }
+            flex: 0 0 nth($flex, 1);
+            max-width: 100%;
+        }
+    }
+}
+
+@include breakpoint(tablet){
+    .ar-list-block{
+        &.ar-mg-small{
+            & > .item{
+                margin-top: rem(15px);
+            }
+        }
+        & > .item{
+            margin-top: rem(15px);
+        }
+    }
+    @for $i from 2 through 4{
+        .ar-list-block.ar-column-#{$i}{
+            & > .item{
+                &:nth-child(-n + 1){
+                    margin-top: 0;
+                }
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 991px){
+    @for $i from 2 through 4{
+        .ar-list-block.ar-column-#{$i}{
+            & > .item{
+                &:nth-child(-n + 2){
+                    margin-top: 0;
+                }
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px){
+    .ar-list-block.ar-column-2{
+        & > .item{
+            &:nth-child(-n + 2){
+                margin-top: 0;
+            }
+            flex: 0 0 nth($flex, 2);
+            max-width: nth($flex, 2);
+        }
+    }
+    @for $i from 3 through 4{
+        .ar-list-block.ar-column-#{$i}{
+            & > .item{
+                &:nth-child(-n + 3){
+                    margin-top: 0;
+                }
+                flex: 0 0 nth($flex, 3);
+                max-width: nth($flex, 3);
+            }
+        }
+    }
+}
+@include breakpoint_up(desktop){
+    @for $i from 2 through 4{
+        .ar-list-block.ar-column-#{$i}{
+            & > .item{
+                &:nth-child(-n + #{$i}){
+                    margin-top: 0;
+                }
+                flex: 0 0 nth($flex, $i);
+                max-width: nth($flex, $i);
+            }
+        }
+    }
+}

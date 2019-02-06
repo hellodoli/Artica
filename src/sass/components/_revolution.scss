@@ -1,0 +1,22 @@
+.ar-custom-revolution{
+    .tp-caption{
+        z-index: 5;
+    }
+    .tparrows.preview3{
+        &::after{
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+        }
+    }
+    .tp-leftarrow.preview3:after{
+        content: "\f053";
+    }
+    .tp-rightarrow.preview3:after{
+        content: "\f054";
+    }
+}
+@include breakpoint(tablet){
+    .ar-custom-revolution .tp-caption{
+        display: none!important;
+    }
+}

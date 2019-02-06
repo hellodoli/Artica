@@ -1,0 +1,82 @@
+- var br = 'hello';
+-
+    var list_style_1 = [
+        {src: 'img/banner/image-1.jpg', iconsrc: 'img/banner/icon-1.png', iconalt: 'banner-logo', title: 'The Delicous Food Tasts'},
+        {src: 'img/banner/image-2.jpg', iconsrc: 'img/banner/icon-1.png', iconalt: 'banner-logo', title: 'The Delicous Food Tasts'},
+    ];
+
+section.ar-banner.ar-custom-revolution(data-start-height="900", data-slide-overlay="yes")
+    .tp-banner-container
+        .tp-banner
+            ul
+                each item in list_style_1
+                    // SLIDE
+                    li(data-transition='fade', 
+                    data-slotamount='1', 
+                    data-masterspeed='1000', 
+                    data-thumb= item.src, 
+                    data-saveperformance='off', 
+                    data-title='Awesome Title Here')
+                        // MAIN IMAGE
+                        img(src= item.src, alt='', 
+                        data-bgposition='center top', 
+                        data-bgfit='cover', 
+                        data-bgrepeat='no-repeat')
+                        // LAYERS
+                        // LAYERS 1
+                        .tp-caption.sfb.sfb.tp-resizeme(
+                            data-x='center', 
+                            data-y='center',
+                            data-hoffset='0', 
+                            data-voffset='-140', 
+                            data-speed='1500', 
+                            data-start='500', 
+                            data-easing='easeOutExpo', 
+                            data-splitin='none', 
+                            data-splitout='none', 
+                            data-elementdelay='0.01', 
+                            data-endelementdelay='0.3', 
+                            data-endspeed='1200', 
+                            data-endeasing='Power4.easeIn')
+                            figure
+                                img(src= item.iconsrc, alt= item.iconalt)
+                        // LAYERS 2
+                        .tp-caption.sfl.sfb.tp-resizeme(
+                            data-x='center', 
+                            data-y='center',
+                            data-hoffset='0', 
+                            data-voffset='-20', 
+                            data-speed='1500', 
+                            data-start='500', 
+                            data-easing='easeOutExpo', 
+                            data-splitin='none', 
+                            data-splitout='none', 
+                            data-elementdelay='0.01', 
+                            data-endelementdelay='0.3', 
+                            data-endspeed='1200', data-endeasing='Power4.easeIn')
+                            h2.ar-banner-title= item.title
+                        // LAYERS 3
+                        .tp-caption.sfr.sfb.tp-resizeme(data-x='center', data-hoffset='0', data-y='center', data-voffset='50', data-speed='1500', data-start='500', data-easing='easeOutExpo', data-splitin='none', data-splitout='none', data-elementdelay='0.01', data-endelementdelay='0.3', data-endspeed='1200', data-endeasing='Power4.easeIn')
+                            .ar-banner-text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.Sed <br> ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
+                        // LAYERS 4
+                        .tp-caption.sfl.sfb.tp-resizeme(data-x='center', data-hoffset='0', data-y='center', data-voffset='130', data-speed='1500', data-start='500', data-easing='easeOutExpo', data-splitin='none', data-splitout='none', data-elementdelay='0.01', data-endelementdelay='0.3', data-endspeed='1200', data-endeasing='Power4.easeIn')
+                            a.ar-banner-btn.ar-btn.ar-btn--default.ar-btn--primary(href='#') Buy Now
+                // SLIDE
+                li(data-transition='fade', data-slotamount='1', data-masterspeed='1000', data-thumb='img/banner/image-3.jpg', data-saveperformance='off', data-title='Awesome Title Here')
+                    img(src='img/banner/image-3.jpg', alt='', data-bgposition='center top', data-bgfit='cover', data-bgrepeat='no-repeat')
+                    .tp-caption.sfb.sfb.tp-resizeme(data-x='left', data-hoffset='30', data-y='center', data-voffset='-140', data-speed='1500', data-start='500', data-easing='easeOutExpo', data-splitin='none', data-splitout='none', data-elementdelay='0.01', data-endelementdelay='0.3', data-endspeed='1200', data-endeasing='Power4.easeIn')
+                        figure
+                            img(src='img/banner/icon-1.png', alt='banner-logo')
+                    .tp-caption.sfl.sfb.tp-resizeme(data-x='left', data-hoffset='30', data-y='center', data-voffset='-20', data-speed='1500', data-start='500', data-easing='easeOutExpo', data-splitin='none', data-splitout='none', data-elementdelay='0.01', data-endelementdelay='0.3', data-endspeed='1200', data-endeasing='Power4.easeIn')
+                        h2.ar-banner-title The Fresh And Tasty Burgers
+                    .tp-caption.sfr.sfb.tp-resizeme(data-x='left', data-hoffset='30', data-y='center', data-voffset='50', data-speed='1500', data-start='500', data-easing='easeOutExpo', data-splitin='none', data-splitout='none', data-elementdelay='0.01', data-endelementdelay='0.3', data-endspeed='1200', data-endeasing='Power4.easeIn')
+                        .ar-banner-text.text-left
+                            | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
+                            br
+                            | aperiam.Sed ut perspiciatis unde omnis iste natus error sit
+                    .tp-caption.sfl.sfb.tp-resizeme(data-x='left', data-hoffset='30', data-y='center', data-voffset='140', data-speed='1500', data-start='500', data-easing='easeOutExpo', data-splitin='none', data-splitout='none', data-elementdelay='0.01', data-endelementdelay='0.3', data-endspeed='1200', data-endeasing='Power4.easeIn')
+                        a.ar-banner-btn.ar-btn.ar-btn--default.ar-btn--primary(href='#') Buy Now
+                    .tp-caption.sfb.sfb.tp-resizeme(data-x='right', data-hoffset='0', data-y='center', data-voffset='-40', data-speed='1500', data-start='500', data-easing='easeOutExpo', data-splitin='none', data-splitout='none', data-elementdelay='0.01', data-endelementdelay='0.3', data-endspeed='1200', data-endeasing='Power4.easeIn')
+                        figure
+                            img(src='img/banner/content-image.png', alt='')
+            .tp-bannertimer

@@ -1,0 +1,148 @@
+$color-footer-dark-1: #151515;
+$color-footer-dark-2: #111111;
+
+.ar-footer{
+    &--dark{
+        .ar-footer-top{
+            background-color: $color-footer-dark-1;
+        }
+        .ar-footer-bottom{
+            background-color: $color-footer-dark-2;
+        }
+    }
+    .ar-footer-top{
+        .ar-section{
+            padding-top: rem(94px);
+            padding-bottom: rem(40px); 
+        }
+    }
+    .ar-footer-bottom{
+        .ar-section{
+            padding: rem(34px) 0;
+        }
+        .copy-text{
+            font-size: rem(13px);
+            color: #999999;
+        }
+    }
+}
+.footer-widget{
+    .widget-title{
+        position: relative;
+        font-size: rem(14px);
+        color: $color-widget-title;
+        text-transform: uppercase;
+        padding: rem(12px) 0 rem(5px);
+        margin-bottom: rem(35px);
+        &::after{
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 1px;
+            left:0; bottom: 0;
+            background-color: $color-primary;
+        }
+    }
+    .widget-content{
+        .widget-des{
+            font-size: rem(14px);
+            color: $color-widget-text;
+        }
+        .list{
+            & > li{
+                position: relative;
+                & + li {
+                    margin-top: rem(12px);
+                }
+                & > a, & > span{
+                    font-size: rem(14px);
+                    color: $color-widget-text;
+                }
+                & > a:hover{
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}
+.opening-widget{
+    .widget-content{
+        .opening-list{
+            & > li {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+.about-widget{
+    .widget-content{
+        .about-list{
+            & > li{
+                padding-left: rem(30px);
+                & > span{
+                    font-size: rem(13px);
+                }
+                & > .icon{
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}
+.post-widget{
+    .widget-content{
+        .post-list{
+            .post-item{
+                display: flex;
+                &--left{
+                    position: relative;
+                    .ar-item-image-holder{
+                        .ar-item-image{
+                            width: 62px; height: 62px;
+                            border-radius: 50%;
+                            border: 3px solid #5c5c5c;
+                        }
+                    }
+                    .post-item-overlay{
+                        @include absCenter;
+                        display: block;
+                        width: 62px; height: 62px;
+                        line-height: 62px;
+                        text-align: center;
+                        color: $color-white;
+                        background-color: rgba(254,181,24,0.80);
+                        border-radius: 50%;
+                        transition: all 500ms ease;
+                        opacity: 0;
+                    }
+                    &:hover{
+                        .post-item-overlay{
+                            opacity: 1;
+                        }
+                    }
+                }
+                &--right{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin-left: rem(13px);
+                    .post-item-title{
+                        font-size: rem(14px);
+                        color: $color-widget-title;
+                    }
+                    .post-item-time{
+                        font-size: rem(13px);
+                        color: $color-gray-dark-4;
+                    }
+                }
+                & + .post-item{
+                    margin-top: rem(16px);
+                }
+            }
+        }
+    }
+}

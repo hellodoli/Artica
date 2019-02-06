@@ -1,0 +1,92 @@
+include mixin.pug
+
+-
+  var list_nav = [
+    {isActive: true, content: 'Home', sub: ['Homepage 1','Homepage 2','Homepage 3']},
+    {isActive: false, content: 'About'},
+    {isActive: false, content: 'Menu'},
+    {isActive: false, content: 'Gallery'},
+    {isActive: false, content: 'Blog'},
+    {isActive: false, content: 'Shop'},
+    {isActive: false, content: 'Contact Us'},
+    {isActive: false, content: 'Elements', sub: [{'Sub Level 1': ['Sub Level 1.1','Sub Level 1.2']},{'Sub level 2': ['Sub Level 2.1','Sub Level 2.2']}]},
+  ];
+
+-
+  var list_social = [
+    {icon: 'fab fa-facebook-f',content: ''},
+    {icon: 'fab fa-twitter',content: ''},
+    {icon: 'fab fa-skype',content: ''},
+    {icon: 'fab fa-tumblr',content: ''},
+  ];
+
+mixin header__top
+  .ar-navbar-wrapper
+    .ar-navbar-wrapper--left
+      .item
+        +list_social(list_social)
+      .item
+        .ar-navbar-text-info Call for reservation: + 011 29 345 678
+    .ar-navbar-wrapper--right
+      .item
+        .ar-navbar-text-info Opening Hours: <time>9.00am</time> - <time>10.00pm</time>
+      .item Dropdown Here
+      .item
+        .ar-cart
+          i(class= "fas fa-shopping-bag")
+          span.count 2
+
+
+mixin header__bottom
+  .ar-navbar-wrapper
+    .item
+      a.ar-navbar-brand(href="#")
+        img(src="./img/logo/logo.png", alt="Logo", title="logo")
+    .item.ml-auto
+      nav.ar-default-navigation
+        +list_navigation(list_nav)
+    .item.ml-medium
+      a.ar-btn.ar-btn--default.ar-btn--primary(role="button", href="#") Reservation
+
+
+mixin header__mobile
+  nav.ar-navbar.ar-navbar--mobile
+    .container
+      .ar-navbar-wrapper
+        //- menu-burger
+        .item
+          #ar-menu-mobile-toggle.ar-menu-burger
+            .line
+              span
+            .line
+              span
+            .line
+              span
+        //- brand
+        .item
+          .ar-navbar-brand
+            img(src="./img/logo/logo.png", alt="Logo", title="logo")
+        //- cart shop
+        .item
+          .ar-cart
+            i(class= "fas fa-shopping-bag")
+            span.count 2
+          
+  nav.ar-mobile-navigation
+    .container
+      +list_navigation(list_nav, isCollapse= true)
+
+.d-md-down-none
+  header.ar-header.ar-header--default
+    .ar-navbar.ar-navbar--default.ar-navbar--fixed
+      .ar-navbar-top
+        .container
+          +header__top
+      .ar-navbar-bottom
+        .container
+          +header__bottom
+    .ar-navbar-fake
+.d-lg-up-none
+  header.ar-header.ar-header--mobile
+    +header__mobile
+

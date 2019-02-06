@@ -1,0 +1,47 @@
+-
+    var list_blog = [
+        {src: 'img/blog/news-1.jpg', date:'29 January 2019', name: 'Peter', title: 'Ingredients For Cooking Pasta', des: 'Curabitur quas nets lacusets nulat iaculis loremis etis nisle varius vitae seditum fugiatum ligul aliquam qui sequi nets lacusets nulat'},
+        {src: 'img/blog/news-2.jpg', date:'29 January 2019', name: 'Kawaii', title: 'Ingredients For Cooking Pasta', des: 'Curabitur quas nets lacusets nulat iaculis loremis etis nisle varius vitae seditum fugiatum ligul aliquam qui sequi nets lacusets nulat'},
+        {src: 'img/blog/news-3.jpg', date:'29 January 2019', name: 'john', title: 'Ingredients For Cooking Pasta', des: 'Curabitur quas nets lacusets nulat iaculis loremis etis nisle varius vitae seditum fugiatum ligul aliquam qui sequi nets lacusets nulat'},
+    ];
+
+mixin list_blog(list)
+    .ar-blog-list
+        .ar-list-block.ar-column-3
+            each item,index in list
+                .item
+                    .ar-blog-item
+                        .ar-blog-item--top
+                            a.ar-item-image-holder(href="#")
+                                img.ar-item-image.img-fluid(src= item.src)
+                        .ar-blog-item--bottom.pt-xsmall
+                            .ar-blog-item-title.mb-xsmall
+                                h4
+                                    a.ar-text-des.ar-text-des--black(href="#")= item.title
+                            .ar-blog-item-meta.mb-xsmall
+                                ul.sf-menu
+                                    li.date
+                                        a(href="#")
+                                            span= item.date    
+                                    li.name
+                                        span.small by
+                                        a(href="#")
+                                            span= item.name
+                            .ar-blog-item-des.mb-small
+                                p.ar-text-paragraph= item.des
+                            .ar-blog-item-info
+                                a.ar-btn-read-more.ar-btn.ar-btn--link(href="#") Read More
+                                a.ar-text-info.ar-text-info--gray(href="#")
+                                    span 10
+                                    |  likes
+
+section.ar-section.ar-blog
+    .ar-full-width-wrapper
+        .container
+            .ar-blog-wrapper
+                .ar-blog-heading
+                    .ar-heading-wrapper.text-center
+                        h2.ar-heading.ar-heading--style-1 Our Blog
+                        h3.ar-heading.ar-heading--style-2 Latest New Updates
+                .ar-blog-body
+                    +list_blog(list_blog)

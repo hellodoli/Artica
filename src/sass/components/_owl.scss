@@ -1,0 +1,63 @@
+.ar-carousel{
+    .owl-carousel{        
+        .owl-dots{
+            margin-top: rem(24px);
+            text-align: center;
+            .owl-dot{
+                margin: 0 rem(4px);
+                &:focus{
+                    outline: 0;
+                }
+                &.active{
+                    span{
+                        background-color: $color-primary;
+                        border-color: $color-primary;    
+                    }
+                }
+                span{
+                    display: block;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: transparent;
+                    border: 1px solid #d3d3d3;
+                }
+            }
+        }
+        .owl-nav{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            button{
+                position: relative;
+                width: 33px;
+                height: 33px;
+                line-height: 33px;
+                font-size: rem(14px);
+                text-align: center;
+                color: $color-white;
+                background-color: #262727;
+                margin-right: rem(10px);
+                transition: all .15s ease-in-out;
+                &:hover{
+                    background-color: #aeaeae;
+                }
+            }
+        }
+    }
+    &.ar-carousel-image-center{
+        .owl-carousel{
+            .owl-item{
+                @include flex-horizontal-center;
+                .slide{
+                    img{
+                        display: block;
+                        max-width: 100%;
+                        height: auto;
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}

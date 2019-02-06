@@ -1,0 +1,94 @@
+.u-center-text { text-align: center!important; }
+
+.u-margin-bottom-big { 
+    margin-bottom: 8rem!important; 
+    @include respond(tab-port) {
+        margin-bottom: 5rem!important; 
+    }
+}
+.u-margin-bottom-medium {
+    margin-bottom: 4rem!important; 
+    @include respond(tab-port) {
+        margin-bottom: 3rem!important; 
+    }
+}
+.u-margin-bottom-small { margin-bottom: 1.5rem!important; }
+
+.u-margin-top-big { margin-top: 8rem!important; }
+.u-margin-top-huge { margin-top: 10rem!important; }
+
+// Hidden class.
+@include breakpoint(laptop){
+    .d-md-down-none{
+        display: none!important;
+    } 
+}
+
+@include breakpoint_up(laptop){
+    .d-lg-up-none{
+        display: none!important;
+    }
+}
+
+.ar-section{
+    padding: rem(80px) 0;
+    &.ar-parallax-image{
+        padding: 0;
+    }
+}
+
+.ar-full-width-wrapper{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.ar-item-image-holder{
+    position: relative;
+    @include flex-vertical-center;
+}
+.ar-item-image{
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+// Color.
+.c-primary{
+    color: $color-primary;
+}
+.c-white{
+    color: $color-white;
+}
+// Margin, padding.
+$list-ulti: (big: rem(60px), medium: rem(30px), small: rem(22px), xsmall: rem(10px));
+@each $k, $v in $list-ulti{
+    .mb-#{$k}{
+        margin-bottom: $v;
+    }
+    .ml-#{$k}{
+        margin-left: $v;
+    }
+    .mt-#{$k}{
+        margin-top: $v;
+    }
+    .mr-#{$k}{
+        margin-right: $v;
+    }
+
+    .pb-#{$k}{
+        padding-bottom: $v;
+    }
+    .pl-#{$k}{
+        padding-left: $v;
+    }
+    .pt-#{$k}{
+        padding-top: $v;
+    }
+    .pr-#{$k}{
+        padding-right: $v;
+    }
+}

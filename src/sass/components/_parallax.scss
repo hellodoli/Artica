@@ -1,0 +1,79 @@
+.ar-parallax{
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent;
+    overflow: visible;
+
+    .ar-parallax-wrap{
+        position: absolute;
+        left: 0; top: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        &--box{
+            z-index: 6;
+            
+            &.center{
+                @include flex-center;
+                .ar-parallax-box{
+                    width: 60%;
+                    max-width: 500px;
+                }
+            }
+            &.full-width{
+                display: flex;
+                align-items: center;
+                .ar-parallax-box{
+                    width: 100%;
+                    padding: 0 rem(15px);
+                }
+            }
+            & > .container{
+                height: 100%;
+                @include flex-vertical-center;
+            }
+        }
+        &--holder{
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: 5;
+            &::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                background-color: rgba(0,0,0,.2);
+            }
+        }
+    }
+    .ar-parallax-box{
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+.ar-parallax-image{
+    &--big{
+        .ar-parallax{
+            height: 860px;
+            @include breakpoint(tablet){
+                height: 1160px;
+            }
+        }
+    }
+    &--small{
+        .ar-parallax{
+            height: 550px;
+            @include breakpoint(desktop){
+                height: 340px;
+            }
+        }    
+    }
+}
