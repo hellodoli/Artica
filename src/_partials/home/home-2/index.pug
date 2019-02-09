@@ -1,3 +1,13 @@
+include ../about
+include ../../mixin
+
 main.ar-main
     article.ar-page
-        h1.test Change
+        // START: about
+        +about('about__image','about__text')
+        // START: parallax
+        +parallax('img/parallax-4.jpg','small','full-width')
+        // START: speacial dishes
+        include special-dishes
+
+    include ../../go-to-top

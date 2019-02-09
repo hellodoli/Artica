@@ -37,6 +37,79 @@ mixin list_social(list, bonus_class= '')
                     i(class= item.icon)
                     | #{item.content}
 
+//- Mixin menu item
+//- =====================
+//- type = {name: 'row' || 'col', col: 1 || 2 || 3 || 4}
+mixin list_menu(list, type)
+    div(class= 'ar-menu-list ar-menu-list-' + type.name)
+        if type.name === 'col'
+            div(class="ar-list-block ar-column-" + type.col)
+                each item,index in list
+                    - var hasNewKlass = (index === 0) ? ' has-new' : '';
+                    .item
+                        div(class="ar-menu-item" + hasNewKlass)
+                            .ar-menu-item--image
+                                a.ar-item-image-holder(href="#")
+                                    img.img-fluid.ar-item-image(src= item.src, alt="menu-thumbnail-image"+"-"+(index+1))
+                            .ar-menu-item--content.pt-xsmall
+                                a(href="#").ar-menu-item-name
+                                    span.name= item.name
+                                    span.price= item.price
+                                p.ar-menu-item-des= item.des
+        else if type.name === 'row'
+            each item,index in list
+                - var hasNewKlass = (index === 0) ? ' has-new' : '';
+                div(class="ar-menu-item" + hasNewKlass)
+                    .ar-menu-item--image
+                        a.ar-item-image-holder(href="#")
+                            img.ar-item-image(src= item.src, alt="menu-thumbnail-image"+"-"+(index+1))
+                    .ar-menu-item--content
+                        .ar-menu-item-name
+                            a(href="#").name
+                                span= item.name
+                            span.price= item.price
+                        p.ar-menu-item-des= item.des
+
+//- Mixin Parallax
+//- =====================
+//- url: string, ex: 'img/image.jpg'
+//- size = 'small' || 'big'
+//- type = 'full-width' || 'center'
+//- bonusclass = string, ex: 'ar-*'
+mixin parallax(url, size= 'small', type= '', bonusclass = '')
+    - var klassType = (type !== '') ? ` ${type}` : '';
+    - var klassBonus = (bonusclass !== '') ? ` ${bonusclass}` : '';
+    section(class="ar-section ar-parallax-image ar-parallax-image--" + size + klassBonus)
+        .ar-full-width-wrapper
+            .ar-parallax
+                div(class="ar-parallax-wrap ar-parallax-wrap--box" + klassType)
+                    if klassType !== ''
+                        .ar-parallax-box
+                            h2.ar-heading.ar-heading--style-1 Healthy Fresh And Hot Dishes.
+                            h4.ar-heading.ar-heading--style-3 Best offers from the house chef.
+                    else
+                        .container
+                            block
+                .ar-parallax-wrap.ar-parallax-wrap--holder(style= "background-image: url(" + url + ")")
+
+//- Mixin list special dishes
+//- =====================
+mixin list_sd(list)
+    .ar-sd-list
+        each item,index in list
+            div(class="ar-sd-item " + item.type)
+                .ar-sd-item--image
+                    .ar-item-image-holder
+                        img.ar-item-image(src= item.src, alt="special-dishes-image"+"-"+(index+1))
+                        .ar-sd-item-overlay
+                            span.price= item.price
+                .ar-sd-item--content
+                    .ar-sd-item-title.mb-xsmall
+                        h4.ar-text-des.ar-text-des--black= item.title
+                    .ar-sd-item-des.mb-small
+                        p.ar-text-paragraph= item.des
+                    a.ar-btn.ar-btn--link(href="#") read more
+
 mixin temp
   .rev_slider_wrapper
     // the ID here will be used in the JavaScript below to initialize the slider

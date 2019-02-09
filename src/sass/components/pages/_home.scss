@@ -113,27 +113,17 @@
 .ar-menu-list{
     .ar-menu-item{
         display: flex;
-        &--left{
-            .ar-item-image-holder{
-                .ar-item-image {
-                    width: 85px;
-                    height: 85px;
-                }    
-            }
-        }
-        &--right{
+        &--content{
             @include flex-horizontal-center;
             flex-direction: column;
             flex: 1;
-            margin-left: rem(25px);
-
+            
             .ar-menu-item-name{
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: rem(6px);
                 span{
                     font-size: rem(17px);
-                    color: $color-white; 
                 }
             }
             .ar-menu-item-des{
@@ -142,14 +132,12 @@
             }
         }
         &.has-new{
-            .ar-menu-item--left{
+            .ar-menu-item--image{
                 & > a{
                     position: relative;
                     &::before{
                         content: 'New';
                         position: absolute;
-                        left: 0;
-                        top: 0;
                         width: 43px;
                         height: 17px;
                         line-height: 17px;
@@ -163,6 +151,62 @@
         }
         & + .ar-menu-item{
             margin-top: rem(20px);
+        }
+    }
+    &.ar-menu-list-col{
+        .ar-menu-item{
+            flex-direction: column;
+            &--content{
+                .ar-menu-item-name{
+                    align-items: center;
+                    span{
+                        font-family: $font-osward;
+                        color: $color-gray-dark-3;
+                    }
+                }
+            }
+            &.has-new{
+                .ar-menu-item--image{
+                    & > a{
+                        &::before{
+                            left: 20px;
+                            top: 20px;
+                            width: 63px; height: 20px;
+                            line-height: 20px;
+                            font-size: rem(12px);
+                            border-radius: rem(2px);
+                        }    
+                    }
+                }
+            }
+        }
+    }
+    &.ar-menu-list-row{
+        .ar-menu-item{
+            &--image{
+                img{
+                    width: 85px;
+                    height: 85px;
+                }
+            }
+            &--content{
+                margin-left: rem(25px);
+                .ar-menu-item-name{
+                    span{
+                        color: $color-white;
+                    }
+                }
+            }
+            &.has-new{
+                .ar-menu-item--image{
+                    & > a{
+                        &::before{
+                            left: 0;
+                            top: 0;
+                        }    
+                    }
+                }
+            }
         }
     }
 }

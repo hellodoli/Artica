@@ -1,15 +1,14 @@
-mixin about__left
-    .ar-about-left
-        .ar-about-heading
-            .ar-heading-wrapper
-                h2.ar-heading.ar-heading--style-1.order great new disher
-                h3.ar-heading.ar-heading--style-2.order Discover Our Restaurant
-        .ar-about-body
-            p.ar-text-paragraph
-                | A cappuccino is an Italian coffee drink which is traditionally prepared with espresso, hot milk and steamed milk foam. Coffee makes up a very important part of the Italian gastronomic culture. Cream may be used instead of milk and is often topped with cinnamon.
-            p.ar-text-paragraph
-                | It is typically smaller in volume than a caffe latte, with a thicker layer of micro foam. in this context referring to the color of the beverage when milk
-            a.ar-btn.ar-btn--default.ar-btn--primary(href="#") Read more
+mixin about__text
+    .ar-about-heading
+        .ar-heading-wrapper
+            h2.ar-heading.ar-heading--style-1.order great new disher
+            h3.ar-heading.ar-heading--style-2.order Discover Our Restaurant
+    .ar-about-body
+        p.ar-text-paragraph
+            | A cappuccino is an Italian coffee drink which is traditionally prepared with espresso, hot milk and steamed milk foam. Coffee makes up a very important part of the Italian gastronomic culture. Cream may be used instead of milk and is often topped with cinnamon.
+        p.ar-text-paragraph
+            | It is typically smaller in volume than a caffe latte, with a thicker layer of micro foam. in this context referring to the color of the beverage when milk
+        a.ar-btn.ar-btn--default.ar-btn--primary(href="#") Read more
 
 -
     var list_carousel = [
@@ -18,23 +17,28 @@ mixin about__left
         {src: 'img/slide-1.jpg'}
     ];
 
-mixin about__right
-    .ar-about-right
-        .ar-about-carousel
-            .ar-carousel
-                .owl-carousel
-                    each item,index in list_carousel
-                        .slide
-                            img(src="img/slide-1.jpg", alt="about-image-slide-" + (index+1))
+mixin about__carousel
+    .ar-about-carousel
+        .ar-carousel
+            .owl-carousel
+                each item,index in list_carousel
+                    .slide
+                        img(src="img/slide-1.jpg", alt="about-image-slide-" + (index+1))
 
-section.ar-section.ar-about
-    .ar-full-width-wrapper
-        .container
-            .ar-about-wrapper
-                .ar-list-block.ar-column-2
-                    .item
-                        +about__left
-                    .item
-                        +about__right
-                        
+mixin about__image
+    .ar-about-block
+        .ar-item-image-holder
+            img.ar-item-image.img-fluid(src="img/dishes.png", alt="about-image-block")
 
+mixin about(left,right)
+    section.ar-section.ar-about
+        .ar-full-width-wrapper
+            .container
+                .ar-about-wrapper
+                    .ar-list-block.ar-column-2
+                        .item
+                            .ar-about-left
+                                +#{left}
+                        .item
+                            .ar-bout-right
+                                +#{right}
