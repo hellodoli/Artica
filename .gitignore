@@ -3,4 +3,8 @@ node_modules
 .sass-cache
 *.thumb
 npm-debug.log
-public/site
+public/
+!public/css
+!public/img
+!public/js
+!public/libss

@@ -13,7 +13,7 @@ var gulp = require('gulp'),
  * Directories here
  */
 var paths = {
-  public: './public/site/',
+  public: './public/',
   sass: './src/sass/',
   css: './public/css/',
   data: './src/_data/'
