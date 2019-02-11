@@ -2,12 +2,6 @@
 node_modules
 .sass-cache
 *.thumb
-npm-debug.log
-public/
-!public/img
-!public/css/font
-!public/css/fonts
-!public/css/animate.css
-!public/img
-!public/js
-!public/lib
+public/*.html
+public/css/style.css
+public/css/animate.css
