@@ -1,3 +1,4 @@
+include ../mixin
 -
     var list_carousel = [
         {text: 'We enjoy sharing the projects and posts we make just as much as we enjoy creating them. consectetur adipiscing elit, sed do eiusmod tempor incididunt Sit back & take a moment to browse through some of our recent completed work.', name: 'Stevan Smith'},
@@ -6,7 +7,7 @@
     ];
 
 mixin carousel
-    .ar-carousel(data-owl-show="1", data-owl-autoplay="false")
+    .ar-carousel(data-owl-show="1")
         .owl-carousel.ar-testimonial-list
             each item in list_carousel
                 .slide
@@ -18,11 +19,6 @@ mixin carousel
                                 p.text= item.text
                             span.name= item.name
 
-section.ar-section.ar-testimonial.ar-parallax-image.ar-parallax-image--small
-    .ar-full-width-wrapper
-        .ar-parallax
-            .ar-parallax-wrap.ar-parallax-wrap--box
-                .container
-                    .ar-testimonial-wrapper.w-100
-                        +carousel
-            .ar-parallax-wrap.ar-parallax-wrap--holder(style= "background-image: url('img/parallax-3.jpg')")
++parallax('img/parallax-3.jpg','small','','ar-testimonial')
+    .ar-testimonial-wrapper.w-100
+        +carousel

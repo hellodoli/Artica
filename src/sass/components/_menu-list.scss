@@ -1,0 +1,98 @@
+.ar-menu-list{
+    .ar-menu-item{
+        display: flex;
+        &--content{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            flex: 1;
+            
+            .ar-menu-item-name{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: rem(6px);
+                span{
+                    font-size: rem(17px);
+                }
+            }
+            .ar-menu-item-des{
+                font-size: rem(14px);
+                color: #aaa;
+            }
+        }
+        &.has-new{
+            .ar-menu-item--image{
+                & > a{
+                    position: relative;
+                    &::before{
+                        content: 'New';
+                        position: absolute;
+                        width: 43px;
+                        height: 17px;
+                        line-height: 17px;
+                        font-size: rem(11px);
+                        color: $color-gray-dark-3;
+                        text-align: center;
+                        background-color: $color-primary;
+                    }    
+                }
+            }
+        }
+        & + .ar-menu-item{
+            margin-top: rem(20px);
+        }
+    }
+    &.ar-menu-list-col{
+        .ar-menu-item{
+            flex-direction: column;
+            &--content{
+                .ar-menu-item-name{
+                    font-family: $font-osward;
+                    align-items: center;
+                }
+            }
+            &.has-new{
+                .ar-menu-item--image{
+                    & > a{
+                        &::before{
+                            left: 20px;
+                            top: 20px;
+                            width: 63px; height: 20px;
+                            line-height: 20px;
+                            font-size: rem(12px);
+                            border-radius: rem(2px);
+                        }    
+                    }
+                }
+            }
+        }
+    }
+    &.ar-menu-list-row{
+        .ar-menu-item{
+            &--image{
+                img{
+                    width: 85px;
+                    height: 85px;
+                }
+            }
+            &--content{
+                margin-left: rem(25px);
+            }
+            &.has-new{
+                .ar-menu-item--image{
+                    & > a{
+                        &::before{
+                            left: 0;
+                            top: 0;
+                        }    
+                    }
+                }
+            }
+        }
+    }
+}
+@include breakpoint_up(tablet){
+    .ar-menu-list .ar-menu-item--content{
+        justify-content: center;
+    }
+}

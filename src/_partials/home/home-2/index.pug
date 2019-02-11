@@ -1,3 +1,27 @@
+//- Use mixin:
+//- 1. +parallax(url, size= 'small', type= '', bonusclass = '')
+include ../../mixin
+//- Use mixin: +about(left,right)
+include ../about
+
 main.ar-main
     article.ar-page
+        //START: banner
+        include ../banner
+        // START: about
+        +about('about__image','about__text')
+        // START: parallax
+        +parallax('img/parallax-4.jpg','small','full-width')
+        // START: speacial dishes
+        include special-dishes
+        // START: tabs
+        include tabs
+        // START: testimonial
+        include ../testimonial
+        // START: delicious
+        include ../delicious
+        // START: booking
+        include booking
+        // START: about (meeting)
+        +about('about__text__meeting','about__image__meeting')
     include ../../go-to-top

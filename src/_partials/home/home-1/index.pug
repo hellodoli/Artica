@@ -1,17 +1,20 @@
+include ../about
+include ../../mixin
+
 main.ar-main
     article.ar-page
         // START: banner
         include ../banner
         // START: about
-        include ../about
+        +about('about__text','about__carousel')
         // START: parallax
-        include ../parallax
+        +parallax('img/parallax.jpg','small','full-width')
         // START: service
         include ../service
         // START: menu
         include ../menu
         // START: speacial dishes
-        include ../special-dishes
+        include special-dishes
         // START: gallery
         include ../gallery
         // START: delicious

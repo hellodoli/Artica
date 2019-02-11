@@ -1,3 +1,5 @@
+include ../mixin
+
 -
     var list_menu = [
         {src: 'img/menu/dining-item-1.jpg', name: 'Gosh Egg-White Omelet', price: '$35.40', des: 'Mussel with tomato sauce, wine'},
@@ -5,20 +7,6 @@
         {src: 'img/menu/dining-item-3.jpg', name: 'Creamy Feta Salad Dressing', price: '$85.20', des: 'Mussel with tomato sauce, wine'},
         {src: 'img/menu/dining-item-4.jpg', name: 'Roasted Red Pepper Hummus', price: '$50.20', des: 'Mussel with tomato sauce, wine'}
     ];
-mixin list_menu(list)
-    .ar-menu-list
-        each item,index in list
-            - var newKlass = (index === 0) ? ' has-new' : '';
-            div(class="ar-menu-item" + newKlass)
-                .ar-menu-item--left
-                    a.ar-item-image-holder(href="#")
-                        img.ar-item-image(src= item.src, alt="menu-thumbnail-image"+"-"+(index+1))
-                .ar-menu-item--right
-                    .ar-menu-item-name
-                        a(href="#").name
-                            span= item.name
-                        span.price= item.price
-                    p.ar-menu-item-des= item.des
 
 -
     var list_carousel = [
@@ -32,30 +20,26 @@ mixin carousel
             each item,index in list_carousel
                 .slide
                     img(src= item.src, alt="menu-image-slide-"+(index+1))
+
 mixin menu
     .ar-menu-box
         .ar-menu-box-inner
             .ar-menu-box-wrapper
                 .row
-                    .col-menu.col-md-5
+                    .col-sm-down-mt.col-md-5
                         .ar-menu-box-left
                             .ar-menu-heading.mb-medium
                                 h2.ar-heading.ar-heading--style-1 <span class="c-white">Our</span> <br> Delicous <span class="c-white">Menu</span>
                                 p.ar-text-info.ar-text-info--white Best offers from the house chef
                             .ar-menu-body
                                 +carousel
-                    .col-menu.col-md-7
+                    .col-sm-down-mt.col-md-7
                         .ar-menu-box-right
                             .ar-menu-heading.mb-small
                                 h3.ar-text-des.ar-text-des--white Our Best Chicken Recipes
                             .ar-menu-body
-                                +list_menu(list_menu)
+                                +list_menu(list_menu,{name: "row", color: "white"})
 
-section.ar-section.ar-parallax-image.ar-parallax-image--big.ar-menu
-    .ar-full-width-wrapper
-        .ar-parallax
-            .ar-parallax-wrap.ar-parallax-wrap--box
-                .container
-                    .ar-menu-wrapper.w-100
-                        +menu
-            .ar-parallax-wrap.ar-parallax-wrap--holder(style= "background-image: url('img/parallax-2.jpg')")
++parallax('img/parallax-2.jpg','big','','ar-menu')
+    .ar-menu-wrapper.w-100
+        +menu

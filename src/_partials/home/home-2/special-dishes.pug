@@ -1,0 +1,20 @@
+include ../../mixin
+-
+    var list_menu = [
+        {src: 'img/menu/dish-1.jpg', name: 'Gosh Egg-White Omelet', price: '$35.40', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/menu/dish-2.jpg', name: 'Powered Turkey Meatballs', price: '$50.00', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/menu/dish-3.jpg', name: 'Creamy Feta Salad Dressing', price: '$85.20', des: 'Mussel with tomato sauce, wine'}
+    ];
+
+section.ar-section.ar-sd
+    .ar-full-width-wrapper
+        .container
+            .ar-sd-wrapper
+                .ar-sd-heading
+                    .ar-heading-wrapper.text-center
+                        h2.ar-heading.ar-heading--style-1 Our Special Dishes.
+                        h3.ar-heading.ar-heading--style-2 We Create Delicous Memory
+                .ar-sd-body
+                    +list_menu(list_menu,{name: 'col', col: '3', color: 'black'})
+
+                            

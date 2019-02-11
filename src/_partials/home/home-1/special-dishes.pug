@@ -1,25 +1,9 @@
+include ../../mixin
 -
     var list_sd = [
         {src: 'img/menu/special-1.jpg', price: '$50.35', title: 'Honey Strawberry', des: 'Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor nequeu tellus rhoncus ut eleifend nibh porttitor ut in nulla enim hasellus mirolestie magna non lorem ipsum dolor site amet.', type: 'left'},
         {src: 'img/menu/special-2.jpg', price: '$50.35', title: 'Honey Strawberry', des: 'Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor nequeu tellus rhoncus ut eleifend nibh porttitor ut in nulla enim hasellus mirolestie magna non lorem ipsum dolor site amet.', type: 'right'},
     ];
-
-mixin list_sd(list)
-    .ar-sd-list
-        each item,index in list
-            div(class="ar-sd-item " + item.type)
-                .ar-sd-item--image
-                    .ar-item-image-holder
-                        img.ar-item-image(src= item.src, alt="special-dishes-image"+"-"+(index+1))
-                        .ar-sd-item-overlay
-                            span.price= item.price
-                .ar-sd-item--content
-                    .ar-sd-item-title.mb-xsmall
-                        h4.ar-text-des.ar-text-des--black= item.title
-                    .ar-sd-item-des.mb-small
-                        p.ar-text-paragraph= item.des
-                    a.ar-btn.ar-btn--link(href="#") read more
-
 
 mixin menu_detail
     ul.sf-menu.menu-detail.ar-text-info.ar-text-info--white
@@ -67,4 +51,3 @@ section.ar-section.ar-sd
                             .ar-sd-body-right
                                 .inner-box
                                     +list_sd(list_sd)
-
