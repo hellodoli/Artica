@@ -1,4 +1,4 @@
-mixin ../../mixin
+include ../../mixin
 -
     var list_menu = [
         {src: 'img/menu/dish-1.jpg', name: 'Gosh Egg-White Omelet', price: '$35.40', des: 'Mussel with tomato sauce, wine'},
@@ -15,6 +15,6 @@ section.ar-section.ar-sd
                         h2.ar-heading.ar-heading--style-1 Our Special Dishes.
                         h3.ar-heading.ar-heading--style-2 We Create Delicous Memory
                 .ar-sd-body
-                    +list_menu(list_menu,{name: 'col', col: '3'})
+                    +list_menu(list_menu,{name: 'col', col: '3', color: 'black'})
 
                             

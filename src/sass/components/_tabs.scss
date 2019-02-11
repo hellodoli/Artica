@@ -1,0 +1,32 @@
+.ar-tabs{
+    display: flex;
+    flex-wrap: nowrap;
+    .item{
+        &:not(:last-child){
+            margin-right: rem(10px);
+        }
+        .link{
+            display: block;
+            font-size: rem(16px);
+            color: $color-white;
+            padding: rem(10px) rem(20px);
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: rem(4px);
+            text-transform: capitalize;
+            &.active{
+                color: $color-primary;
+            }
+        }
+    }
+}
+@include breakpoint(tablet){
+    .ar-tabs{
+        flex-wrap: wrap;
+    }
+}
+@include breakpoint(mini-phone){
+    .ar-tabs .item .link{
+        padding: rem(10px);
+    }
+}

@@ -1,0 +1,58 @@
+.ar-form{
+    .ar-form-group{
+        position: relative;
+        &.has-icon{
+            .icon{
+                position: absolute;
+                right: 1px;
+                top: 1px; bottom: 1px;
+                @include flex-center;
+                width: 40px;
+                padding: 0;
+                font-size: rem(14px);
+                color: $color-gray-dark;
+            }
+            .ar-form-control{
+                padding-right: 40px;
+            }
+        }
+    }
+    .ar-form-control{
+        display: block;
+        width: 100%;
+        height: calc(2.25rem + 2px);
+        padding: .375rem .75rem;
+        font-size: rem(13px);
+        font-weight: 400;
+        line-height: 1.5;
+        color: $color-gray-dark;
+        background-color: $color-white;
+        background-clip: padding-box;
+        border: 1px solid #e2e2e2;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        outline: none;
+        box-shadow: none;
+    }
+
+    &.ar-form-dark{
+        .ar-form-group{
+            &.has-icon{
+                .icon{
+                    color: #d2d2d2;
+                }
+            }
+        }
+        .ar-form-control{
+            color: $color-white;
+            border-color: #3a3a3a;
+            background-color: rgba(0,0,0,0.30);
+            &::placeholder{
+                
+            }
+            &:focus{
+                border-color: $color-primary;
+            }
+        }
+        
+    }
+}

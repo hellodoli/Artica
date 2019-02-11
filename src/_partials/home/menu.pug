@@ -26,19 +26,19 @@ mixin menu
         .ar-menu-box-inner
             .ar-menu-box-wrapper
                 .row
-                    .col-menu.col-md-5
+                    .col-sm-down-mt.col-md-5
                         .ar-menu-box-left
                             .ar-menu-heading.mb-medium
                                 h2.ar-heading.ar-heading--style-1 <span class="c-white">Our</span> <br> Delicous <span class="c-white">Menu</span>
                                 p.ar-text-info.ar-text-info--white Best offers from the house chef
                             .ar-menu-body
                                 +carousel
-                    .col-menu.col-md-7
+                    .col-sm-down-mt.col-md-7
                         .ar-menu-box-right
                             .ar-menu-heading.mb-small
                                 h3.ar-text-des.ar-text-des--white Our Best Chicken Recipes
                             .ar-menu-body
-                                +list_menu(list_menu,{name: "row"})
+                                +list_menu(list_menu,{name: "row", color: "white"})
 
 +parallax('img/parallax-2.jpg','big','','ar-menu')
     .ar-menu-wrapper.w-100

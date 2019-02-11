@@ -50,3 +50,7 @@ ul.sf-menu{
         list-style: none;
     }
 }
+
+button[type="submit"], input[type="submit"]{
+    cursor: pointer;
+}

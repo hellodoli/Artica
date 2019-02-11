@@ -4,10 +4,11 @@ mixin about__text
             h2.ar-heading.ar-heading--style-1.order great new disher
             h3.ar-heading.ar-heading--style-2.order Discover Our Restaurant
     .ar-about-body
-        p.ar-text-paragraph
-            | A cappuccino is an Italian coffee drink which is traditionally prepared with espresso, hot milk and steamed milk foam. Coffee makes up a very important part of the Italian gastronomic culture. Cream may be used instead of milk and is often topped with cinnamon.
-        p.ar-text-paragraph
-            | It is typically smaller in volume than a caffe latte, with a thicker layer of micro foam. in this context referring to the color of the beverage when milk
+        .mb-small
+            p.ar-text-paragraph
+                | A cappuccino is an Italian coffee drink which is traditionally prepared with espresso, hot milk and steamed milk foam. Coffee makes up a very important part of the Italian gastronomic culture. Cream may be used instead of milk and is often topped with cinnamon.
+            p.ar-text-paragraph
+                | It is typically smaller in volume than a caffe latte, with a thicker layer of micro foam. in this context referring to the color of the beverage when milk
         a.ar-btn.ar-btn--default.ar-btn--primary(href="#") Read more
 
 -
@@ -29,6 +30,35 @@ mixin about__image
     .ar-about-block
         .ar-item-image-holder
             img.ar-item-image.img-fluid(src="img/dishes.png", alt="about-image-block")
+
+mixin about__text__meeting
+    .ar-about-heading
+        .ar-heading-wrapper
+            h2.ar-heading.ar-heading--style-1.order Gorgeous Halls
+            h3.ar-heading.ar-heading--style-2.order Find Perfect Place For Any Meeting
+    .ar-about-body
+        .mb-small
+            p.ar-text-paragraph
+                | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        .mb-small
+            h4.ar-text-des.ar-text-des--black.mb-xsmall Seat Up 155 Company Meatings
+            p.ar-text-paragraph
+                | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        .mb-small
+            h4.ar-text-des.ar-text-des--black.mb-xsmall Traditional Home hall
+            p.ar-text-paragraph
+                | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        a.ar-btn.ar-btn--default.ar-btn--primary(href="#") Read more
+
+mixin about__image__meeting
+    .ar-about-block
+        .row
+            .col-md-down-mt.col-image.col-sm-6.col-md-12.col-lg-6
+                .ar-item-image-holder
+                    img.ar-item-image.img-fluid(src="img/meeting-1.jpg", alt="about-image-block-1")
+            .col-md-down-mt.col-image.col-sm-6.col-md-12.col-lg-6
+                .ar-item-image-holder
+                    img.ar-item-image.img-fluid(src="img/meeting-2.jpg", alt="about-image-block-2")
 
 mixin about(left,right)
     section.ar-section.ar-about

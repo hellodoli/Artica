@@ -1,0 +1,44 @@
+include ../../mixin
+
+- var url = 'img/parallax-6.jpg';
++parallax(url, size= 'big', type= '', bonusclass = 'ar-booking')
+    .ar-booking-wrapper.w-100
+        .ar-booking-heading
+            .ar-heading-wrapper.text-center
+                h2.ar-heading.ar-heading--style-1 Relaxing Atmosphere
+                h4.ar-heading.ar-heading--style-3 Book Your Table
+        .ar-booking-body
+            .ar-booking-form-wrapper
+                // .ar-form
+                form.ar-form.ar-form-dark(action="#", method="#")
+                    .mb-medium
+                        .ar-list-block.ar-column-3
+                            .item
+                                .ar-form-group
+                                    input.ar-form-control(type="text", placeholder="Your name*", required)
+                            .item
+                                .ar-form-group
+                                    input.ar-form-control(type="email", placeholder="Your email*", required)
+                            .item
+                                .ar-form-group.has-icon
+                                    span.icon
+                                        i.fas.fa-mobile-alt
+                                    input.ar-form-control(type="tel", placeholder="Mobile number*", required)
+                            .item
+                                .ar-form-group.has-icon
+                                    span.icon
+                                        i.far.fa-calendar-alt
+                                    input.ar-form-control(type="date", placeholder="Date*", required)
+                            .item
+                                .ar-form-group.has-icon
+                                    span.icon
+                                        i.far.fa-clock
+                                    input.ar-form-control(type="time", placeholder="Time*", required)
+                            .item
+                                .ar-form-group.has-icon
+                                    span.icon
+                                        i.fas.fa-user
+                                    input.ar-form-control(type="number", min="1", placeholder="No. of Persons*", required)
+                    .text-center
+                        button(type="submit", class="ar-booking-btn-submit ar-btn ar-btn--default ar-btn--primary text-uppercase") book now
+

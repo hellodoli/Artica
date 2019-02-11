@@ -46,6 +46,40 @@
     }
 }
 // 2. section about
+.ar-about{
+    .ar-about-left, .ar-about-right{
+        height: 100%;
+    }
+}
+// 2.1 Home 2
+.ar-about{
+    .ar-about-block{
+        .row{
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+        .col-image{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 991px){
+    .ar-about .ar-about-block .col-image img{
+        margin-left: auto!important;
+        margin-right: 0!important;
+    }
+}
+@media (min-width: 576px) and (max-width: 767px){
+    .ar-about .ar-about-block .col-md-down-mt{
+        margin-top: 0;
+    }
+}
+@include breakpoint(max-phone){
+    .ar-about .ar-about-block .col-image img{
+        width: 100%;
+    }
+}
 // 3. section parallax image
 // 4. section service
 .ar-service-list{
@@ -58,155 +92,66 @@
     }
 }
 // 5. section menu
-.ar-menu{
-    .ar-carousel{
-        .owl-carousel{
-            .owl-nav{
-                bottom: -80px;
+// 5.1 Home 1
+.ar-page-home-1{
+    .ar-menu{
+        .ar-carousel{
+            .owl-carousel{
+                .owl-nav{
+                    bottom: -80px;
+                }
             }
         }
-    }
-    .ar-menu-box-right{
-        .ar-menu-heading{
-            .ar-text-des{
-                font-size: rem(22px);    
+        .ar-menu-box-right{
+            .ar-menu-heading{
+                .ar-text-des{
+                    font-size: rem(22px);    
+                }
             }
         }
-    }
-    .ar-menu-box{
-        position: relative;
-        border: 9px solid #bababa;
-        &::before{
-            position: absolute;
-            content: '';
-            left: 0px;
-            top: 0px;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(13,13,13,0.80);
-        }
-        .ar-menu-box-inner{
-            padding: rem(65px) rem(88px);
+        .ar-menu-box{
+            position: relative;
+            border: 9px solid #bababa;
+            &::before{
+                position: absolute;
+                content: '';
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(13,13,13,0.80);
+            }
+            .ar-menu-box-inner{
+                padding: rem(65px) rem(88px);
+            }
         }
     }
 }
 @include breakpoint(laptop){
-    .ar-menu .ar-menu-box .ar-menu-box-inner{
+    .ar-page-home-1 .ar-menu .ar-menu-box .ar-menu-box-inner{
         padding: rem(65px) rem(55px);
     }
 }
 @include breakpoint(tablet){
-    .ar-menu .ar-carousel .owl-carousel .owl-nav{
+    .ar-page-home-1 .ar-menu .ar-carousel .owl-carousel .owl-nav{
         display: none!important;
     }
-    .ar-menu .ar-menu-box{
+    .ar-page-home-1 .ar-menu .ar-menu-box{
         border: none;
         &::before{background-color: transparent;}
     }
-    .ar-menu .ar-menu-box .ar-menu-box-inner{
+    .ar-page-home-1 .ar-menu .ar-menu-box .ar-menu-box-inner{
         padding: 0;
     }
-    .ar-menu .ar-menu-wrapper .col-menu + .col-menu{
-        margin-top: rem(30px);
-    }
 }
-.ar-menu-list{
-    .ar-menu-item{
-        display: flex;
-        &--content{
-            @include flex-horizontal-center;
-            flex-direction: column;
-            flex: 1;
-            
-            .ar-menu-item-name{
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: rem(6px);
-                span{
-                    font-size: rem(17px);
-                }
-            }
-            .ar-menu-item-des{
-                font-size: rem(14px);
-                color: #aaa;
-            }
-        }
-        &.has-new{
-            .ar-menu-item--image{
-                & > a{
-                    position: relative;
-                    &::before{
-                        content: 'New';
-                        position: absolute;
-                        width: 43px;
-                        height: 17px;
-                        line-height: 17px;
-                        font-size: rem(11px);
-                        color: $color-gray-dark-3;
-                        text-align: center;
-                        background-color: $color-primary;
-                    }    
-                }
-            }
-        }
-        & + .ar-menu-item{
-            margin-top: rem(20px);
-        }
-    }
-    &.ar-menu-list-col{
-        .ar-menu-item{
-            flex-direction: column;
-            &--content{
-                .ar-menu-item-name{
-                    align-items: center;
-                    span{
-                        font-family: $font-osward;
-                        color: $color-gray-dark-3;
-                    }
-                }
-            }
-            &.has-new{
-                .ar-menu-item--image{
-                    & > a{
-                        &::before{
-                            left: 20px;
-                            top: 20px;
-                            width: 63px; height: 20px;
-                            line-height: 20px;
-                            font-size: rem(12px);
-                            border-radius: rem(2px);
-                        }    
-                    }
-                }
-            }
-        }
-    }
-    &.ar-menu-list-row{
-        .ar-menu-item{
-            &--image{
-                img{
-                    width: 85px;
-                    height: 85px;
-                }
-            }
-            &--content{
-                margin-left: rem(25px);
-                .ar-menu-item-name{
-                    span{
-                        color: $color-white;
-                    }
-                }
-            }
-            &.has-new{
-                .ar-menu-item--image{
-                    & > a{
-                        &::before{
-                            left: 0;
-                            top: 0;
-                        }    
-                    }
-                }
-            }
+// 5.2 Home 2
+.ar-page-home-2{
+    .ar-menu{
+        .ar-menu-tab-wrapper{
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            display: flex;
+            justify-content: center;
         }
     }
 }
@@ -526,5 +471,16 @@
     .ar-blog-list .ar-blog-item--top .ar-item-image-holder,
     .ar-blog-list .ar-blog-item--top .ar-item-image{
         width: 100%;
+    }
+}
+// 11.section booking (form)
+.ar-booking{
+    .ar-form{
+        .ar-booking-btn-submit{
+            font-size: rem(12px);
+            &:hover{
+                color: $color-white;
+            }
+        }
     }
 }

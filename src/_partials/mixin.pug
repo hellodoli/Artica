@@ -39,7 +39,7 @@ mixin list_social(list, bonus_class= '')
 
 //- Mixin menu item
 //- =====================
-//- type = {name: 'row' || 'col', col: 1 || 2 || 3 || 4}
+//- type = {name: 'row' || 'col', [col: 1 || 2 || 3 || 4], color: 'white' || 'black'}
 mixin list_menu(list, type)
     div(class= 'ar-menu-list ar-menu-list-' + type.name)
         if type.name === 'col'
@@ -52,23 +52,39 @@ mixin list_menu(list, type)
                                 a.ar-item-image-holder(href="#")
                                     img.img-fluid.ar-item-image(src= item.src, alt="menu-thumbnail-image"+"-"+(index+1))
                             .ar-menu-item--content.pt-xsmall
-                                a(href="#").ar-menu-item-name
+                                a(href="#", class="ar-menu-item-name" + " c-" + type.color)
                                     span.name= item.name
                                     span.price= item.price
                                 p.ar-menu-item-des= item.des
         else if type.name === 'row'
-            each item,index in list
-                - var hasNewKlass = (index === 0) ? ' has-new' : '';
-                div(class="ar-menu-item" + hasNewKlass)
-                    .ar-menu-item--image
-                        a.ar-item-image-holder(href="#")
-                            img.ar-item-image(src= item.src, alt="menu-thumbnail-image"+"-"+(index+1))
-                    .ar-menu-item--content
-                        .ar-menu-item-name
-                            a(href="#").name
-                                span= item.name
-                            span.price= item.price
-                        p.ar-menu-item-des= item.des
+            if type.col === undefined
+                each item,index in list
+                    - var hasNewKlass = (index === 0) ? ' has-new' : '';
+                    div(class="ar-menu-item" + hasNewKlass)
+                        .ar-menu-item--image
+                            a.ar-item-image-holder(href="#")
+                                img.ar-item-image(src= item.src, alt="menu-thumbnail-image"+"-"+(index+1))
+                        .ar-menu-item--content
+                            .ar-menu-item-name
+                                a(href="#", class="name" + " c-" + type.color)
+                                    span= item.name
+                                span(class="price" + " c-"+ type.color)= item.price
+                            p.ar-menu-item-des= item.des
+            else
+                div(class="ar-list-block ar-column-" + type.col)
+                    each item,index in list
+                        - var hasNewKlass = (index === 0) ? ' has-new' : '';
+                        .item
+                            div(class="ar-menu-item" + hasNewKlass)
+                                .ar-menu-item--image
+                                    a.ar-item-image-holder(href="#")
+                                        img.ar-item-image(src= item.src, alt="menu-thumbnail-image"+"-"+(index+1))
+                                .ar-menu-item--content
+                                    .ar-menu-item-name
+                                        a(href="#", class="name" + " c-" + type.color)
+                                            span= item.name
+                                        span(class="price" + " c-"+ type.color)= item.price
+                                    p.ar-menu-item-des= item.des
 
 //- Mixin Parallax
 //- =====================
