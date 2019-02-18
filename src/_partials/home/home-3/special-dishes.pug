@@ -1,0 +1,39 @@
+-
+    var list_carousel = [
+        {src: 'img/gallery/1.jpg', name: 'Super Burgers', price: '$150', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/gallery/2.jpg', name: 'Delirium Tremens', price: '$250', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/gallery/1.jpg', name: 'Beef Steak ', price: '$200', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/gallery/3.jpg', name: 'Cabernet Sauvignon', price: '$155', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/gallery/2.jpg', name: 'Delirium Tremens', price: '$250', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/gallery/1.jpg', name: 'Beef Steak ', price: '$200', des: 'Mussel with tomato sauce, wine'},
+    ];
+
+mixin carousel
+    .ar-carousel(data-owl-show="4", data-owl-nav="true", data-owl-dots="false", data-owl-margin="20")
+        .owl-carousel.ar-menu-list.ar-menu-list-col
+            each item,index in list_carousel
+                .slide
+                    div(class="ar-menu-item has-new")
+                        .ar-menu-item--image
+                            a.ar-item-image-holder(href="#")
+                                img.ar-item-image(src= item.src, alt="menu-image-slide"+"-"+(index+1))
+                        .ar-menu-item--content.pt-xsmall
+                            a(href="#", class="ar-menu-item-name" + " c-white")
+                                span.name= item.name
+                                span.price= item.price
+                            p.ar-menu-item-des= item.des
+
+- var url = 'img/parallax-4.jpg';
+section(class="ar-section ar-parallax-image ar-parallax-image--medium ar-sd")
+        .ar-full-width-wrapper
+            .ar-parallax
+                div(class="ar-parallax-wrap ar-parallax-wrap--box")
+                        .container-fluid
+                            .ar-sd-wrapper.w-100
+                                .ar-sd-heading
+                                    .mb-small.ml-medium
+                                        h2.ar-sd-title Our Special Dishes
+                                .ar-sd-body
+                                    +carousel 
+                .ar-parallax-wrap.ar-parallax-wrap--holder(style= "background-image: url(" + url + ")")
+                    

@@ -32,6 +32,9 @@
         transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
         outline: none;
         box-shadow: none;
+        &:focus{
+            border-color: $color-primary;
+        }
     }
 
     &.ar-form-dark{
@@ -46,13 +49,6 @@
             color: $color-white;
             border-color: #3a3a3a;
             background-color: rgba(0,0,0,0.30);
-            &::placeholder{
-                
-            }
-            &:focus{
-                border-color: $color-primary;
-            }
         }
-        
     }
 }

@@ -1,0 +1,76 @@
+.ar-sd-list{
+    .ar-sd-item{
+        display: flex;
+        flex-direction: column;
+        padding: rem(40px) 0;
+        
+        &:not(:last-child){
+            border-bottom: 1px dashed #e5e5e5;
+        }
+        &--image{
+            position: relative;
+            @include flex-horizontal-center;
+            .ar-item-image-holder{
+                .ar-item-image{
+                    width: 206px; height: 206px;
+                    border-radius: 50%;
+                }
+            }
+            .ar-sd-item-overlay{
+                content: '';
+                @include absCenter;
+                display: block;
+                width: 206px; height: 206px;
+                line-height: 206px;
+                text-align: center;
+                border-radius: 50%;
+                background-color: rgba(254,181,24,0.60);
+                transition: all 500ms ease;
+                opacity: 0;
+                .price{
+                    font-size: rem(24px);
+                    font-weight: 700;
+                    color: $color-white;
+                }
+            }
+        }
+        &--content{
+            padding-top: rem(20px);
+            text-align: center; 
+        }
+        &:hover{
+            .ar-sd-item--image{
+                .ar-sd-item-overlay{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+@include breakpoint_up(tablet){
+    .ar-sd-list{
+        .ar-sd-item{
+            flex-direction: row;
+            &--image{
+                flex: 0 0 40%;
+                max-width: 206px;
+            }
+            &--content{
+                flex: 0 1 60%;
+                max-width: 60%;
+                padding-top: 0;
+                text-align: left;
+                margin-left: rem(20px);
+            }
+            &.right{
+                .ar-sd-item--image{
+                    order: 1;
+                }
+                .ar-sd-item--content{
+                    margin-left: 0;
+                    margin-right: rem(20px);
+                }
+            }
+        }
+    }
+}

@@ -46,7 +46,8 @@ mixin list_menu(list, type)
             div(class="ar-list-block ar-column-" + type.col)
                 each item,index in list
                     - var hasNewKlass = (index === 0) ? ' has-new' : '';
-                    .item
+                    - var wowdelay = index*300;
+                    div(class="item" + " " + "wow fadeIn", data-wow-delay= `${wowdelay}ms`)
                         div(class="ar-menu-item" + hasNewKlass)
                             .ar-menu-item--image
                                 a.ar-item-image-holder(href="#")
@@ -89,7 +90,7 @@ mixin list_menu(list, type)
 //- Mixin Parallax
 //- =====================
 //- url: string, ex: 'img/image.jpg'
-//- size = 'small' || 'big'
+//- size = 'small' || 'big' || 'medium'
 //- type = 'full-width' || 'center'
 //- bonusclass = string, ex: 'ar-*'
 mixin parallax(url, size= 'small', type= '', bonusclass = '')

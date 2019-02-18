@@ -31,7 +31,7 @@
                     padding: 0 rem(15px);
                 }
             }
-            & > .container{
+            & > .container, .container-fluid{
                 height: 100%;
                 @include flex-vertical-center;
             }
@@ -66,6 +66,11 @@
             @include breakpoint(tablet){
                 height: 1160px;
             }
+        }
+    }
+    &--medium{
+        .ar-parallax{
+            height: 640px;
         }
     }
     &--small{

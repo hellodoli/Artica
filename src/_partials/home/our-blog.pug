@@ -9,7 +9,8 @@ mixin list_blog(list)
     .ar-blog-list
         .ar-list-block.ar-column-3
             each item,index in list
-                .item
+                - var wowdelay = index*300;
+                div(class="item" + " " + "wow fadeIn", data-wow-delay= `${wowdelay}ms`)
                     .ar-blog-item
                         .ar-blog-item--top
                             a.ar-item-image-holder(href="#")

@@ -39,6 +39,9 @@
                 background-color: #262727;
                 margin-right: rem(10px);
                 transition: all .15s ease-in-out;
+                &:last-child{
+                    margin-right: 0;
+                }
                 &:hover{
                     background-color: #aeaeae;
                 }
@@ -59,5 +62,10 @@
                 }
             }
         }
+    }
+}
+@include breakpoint(tablet){
+    .ar-carousel .owl-carousel .owl-nav{
+        display: none;
     }
 }

@@ -19,7 +19,8 @@ mixin about__text
     ];
 
 mixin about__carousel
-    .ar-about-carousel
+    div(class="wow fadeInRight")
+        // .ar-carousel
         .ar-carousel
             .owl-carousel
                 each item,index in list_carousel
@@ -27,9 +28,10 @@ mixin about__carousel
                         img(src="img/slide-1.jpg", alt="about-image-slide-" + (index+1))
 
 mixin about__image
-    .ar-about-block
-        .ar-item-image-holder
-            img.ar-item-image.img-fluid(src="img/dishes.png", alt="about-image-block")
+    div(class="wow fadeInLeft")
+        .ar-about-block
+            .ar-item-image-holder
+                img.ar-item-image.img-fluid(src="img/dishes.png", alt="about-image-block")
 
 mixin about__text__meeting
     .ar-about-heading
@@ -54,11 +56,13 @@ mixin about__image__meeting
     .ar-about-block
         .row
             .col-md-down-mt.col-image.col-sm-6.col-md-12.col-lg-6
-                .ar-item-image-holder
-                    img.ar-item-image.img-fluid(src="img/meeting-1.jpg", alt="about-image-block-1")
+                div(class="wow fadeIn", data-wow-delay="0ms")
+                    .ar-item-image-holder
+                        img.ar-item-image.img-fluid(src="img/meeting-1.jpg", alt="about-image-block-1")
             .col-md-down-mt.col-image.col-sm-6.col-md-12.col-lg-6
-                .ar-item-image-holder
-                    img.ar-item-image.img-fluid(src="img/meeting-2.jpg", alt="about-image-block-2")
+                div(class="wow fadeIn", data-wow-delay="300ms")
+                    .ar-item-image-holder
+                        img.ar-item-image.img-fluid(src="img/meeting-2.jpg", alt="about-image-block-2")
 
 mixin about(left,right)
     section.ar-section.ar-about

@@ -69,8 +69,11 @@
     }
 }
 
+// 1.main font: Roboto Slab
+// 2.title font: Osward
+// 3.speacial title font: Dancing script
 
-
+// font-size: 14px + main font + colors:(yellow + des + white)
 .ar-text-info{
     font-size: rem(14px);
     &--yellow{
@@ -83,6 +86,8 @@
         color: $color-white;
     }
 }
+
+// font-size: 14px + main font + des color 
 .ar-text-paragraph{
     font-size: rem(14px);
     color: $color-gray-dark;
@@ -91,6 +96,8 @@
         margin-bottom: rem(22px);
     }
 }
+
+//font-size: 20px + title font + colors:(white or black)
 .ar-text-des{
     font-family: $font-osward;
     font-size: rem(20px);
@@ -101,6 +108,8 @@
         color: $color-gray-dark-3;
     }
 }
+
+//special title
 .ar-heading{
     display: block;
     position: relative;
@@ -137,6 +146,25 @@
         color: $color-white;
         font-size: rem(36px);
         text-transform: initial;
-        margin-top: rem(-10px);
+    }
+}
+
+@include breakpoint(max-phone){
+    .ar-heading--style-1{
+        font-size: rem(28px);
+        &.order{
+            font-size: rem(28px);
+        }
+    }
+    .ar-heading--style-2{
+        &.order{
+            font-size: rem(24px);
+        }
+    }
+    .ar-heading--style-3{
+        font-size: rem(20px);
+    }
+    .ar-heading-wrapper{
+        margin-bottom: rem(30px);
     }
 }

@@ -41,7 +41,7 @@
     }
 }
 
-// container
+// Container
 .ar-section{
     padding: rem(80px) 0;
     &.ar-parallax-image{
@@ -54,6 +54,11 @@
     height: auto;
     margin-top: 0px;
     margin-bottom: 0px;
+}
+@include breakpoint(max-phone){
+    .ar-section{
+        padding: rem(40px) 0;
+    }
 }
 
 // Image

@@ -62,7 +62,7 @@
                         0: {items: 1},
                         768: {items: 2},
                         992: {items: 3},
-                        1200: show
+                        1200: {items: show}
                     };
                 }
         
@@ -85,7 +85,7 @@
     /*--------------------
     * revolution
     ----------------------*/
-    AT.ClientBannerRevolution = () =>{
+    AT.ClientBannerRevolution = () => {
         const bannerRevolution = document.querySelectorAll('.ar-banner .tp-banner-container .tp-banner');
         if(bannerRevolution.length){
             for (let i = 0; i < bannerRevolution.length; i++) {
@@ -171,7 +171,7 @@
     /*--------------------
     * jquery-ui datetimepicker
     ----------------------*/
-    AT.ClientDatePicker = () =>{
+    AT.ClientDatePicker = () => {
         const dp = document.querySelectorAll('.date-picker');
         if(dp.length){
             for (let i = 0; i < dp.length; i++) {
@@ -180,10 +180,18 @@
         }
     };
 
+    /*--------------------
+    * WOW Animation
+    ----------------------*/
+    AT.ClientWow = () => {
+        new WOW().init();
+    };
+
     $(document).ready(function(){
         AT.ClientSlide();
         AT.ClientBannerRevolution();
         AT.ClientDatePicker();
+        AT.ClientWow();
     });
 
 })(jQuery)

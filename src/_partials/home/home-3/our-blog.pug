@@ -1,0 +1,34 @@
+//- like our-blog(global) but some change.
+- var textLorem = 'Sed ut perspiciatis unde omnis iste natus errorsit voluptatem accusantium doloremque laudantium thes hatles tooest surf totam rem aperiam.';
+-
+    var list_blog = [
+        {src: 'img/blog/featured-1.jpg', date:'29 January 2019', name: 'Peter', title: 'Our Restaruant Story', des: textLorem},
+        {src: 'img/blog/featured-2.jpg', date:'29 January 2019', name: 'Kawaii', title: 'About Our Master Chefs', des: textLorem},
+        {src: 'img/blog/featured-3.jpg', date:'29 January 2019', name: 'john', title: 'Check Our Sweet Courses', des: textLorem}
+    ];
+
+mixin list_blog(list)
+    .ar-blog-list
+        .ar-list-block.ar-column-3
+            each item,index in list
+                - var wowdelay = index*300;
+                div(class="item" + " " + "wow fadeIn", data-wow-delay= `${wowdelay}ms`)
+                    .ar-blog-item.center
+                        .ar-blog-item--top
+                            a.ar-item-image-holder(href="#")
+                                img.ar-item-image.img-fluid(src= item.src)
+                        .ar-blog-item--bottom.pt-medium
+                            .ar-blog-item-title.mb-xsmall
+                                h4
+                                    a.ar-text-des.ar-text-des--black(href="#")= item.title
+                            .ar-blog-item-des.mb-small
+                                p.ar-text-paragraph= item.des
+                            .ar-blog-item-info
+                                a.ar-btn-read-more.ar-btn.ar-btn--link(href="#") Read More
+
+section.ar-section.ar-blog
+    .ar-full-width-wrapper
+        .container
+            .ar-blog-wrapper
+                .ar-blog-body
+                    +list_blog(list_blog)

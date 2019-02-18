@@ -1,0 +1,33 @@
+include ../../mixin
+
+-
+  var list_social = [
+    {icon: 'fab fa-facebook-f',content: ''},
+    {icon: 'fab fa-twitter',content: ''},
+    {icon: 'fab fa-vine',content: ''},
+    {icon: 'fab fa-skyatlas',content: ''},
+  ];
+
+section.ar-section.ar-chef-info
+    .ar-full-width-wrapper
+        .container
+            .ar-chef-info-wrapper
+                .row
+                    .col-lg-6.col-md-down-mt
+                        .ar-chef-info--left
+                            .wow.fadeInUp
+                                .ar-item-image-holder
+                                    img.ar-item-image.img-fluid(src="img/master-chef.png", alt="image-chef")
+                    .col-lg-6.col-md-down-mt
+                        .ar-chef-info--right
+                            .ar-chef-info-heading.mb-small
+                                h2.chef-name Stevan Smith
+                                h4.chef-pos The Master Of Cooking
+                            .ar-chef-info-body
+                                .mb-small
+                                    p.ar-text-paragraph
+                                        | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.
+                                +list_social(list_social)
+            
+
+

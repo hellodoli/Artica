@@ -1,0 +1,25 @@
+//- Use mixin:
+//- 1. +parallax(url, size= 'small', type= '', bonusclass = '')
+include ../../mixin
+
+main.ar-main
+    article.ar-page
+        // START: banner
+        include ../banner
+        // START: our-blog (center)
+        include our-blog
+        // START: tabs
+        include ../tabs
+        // START: special dishes
+        include special-dishes
+        // START: chef info
+        include chef-info
+        // START: parallax
+        +parallax('img/parallax-6.jpg', size='small', type='full-width')
+        // START: booking
+        include booking
+        // START: testimonial
+        include ../testimonial
+        // START: our blog
+        include ../our-blog
+    include ../../go-to-top

@@ -133,9 +133,6 @@
     }
 }
 @include breakpoint(tablet){
-    .ar-page-home-1 .ar-menu .ar-carousel .owl-carousel .owl-nav{
-        display: none!important;
-    }
     .ar-page-home-1 .ar-menu .ar-menu-box{
         border: none;
         &::before{background-color: transparent;}
@@ -144,7 +141,8 @@
         padding: 0;
     }
 }
-// 5.2 Home 2
+// 5.2 Home 2, Home 3
+.ar-page-home-3,
 .ar-page-home-2{
     .ar-menu{
         .ar-menu-tab-wrapper{
@@ -156,6 +154,7 @@
     }
 }
 // 6. section special dishes
+// 6.1 Home 1
 .ar-sd{
     &-body-left{
         .inner-box{
@@ -165,55 +164,6 @@
     &-body-right{
         .inner-box{
             padding-left: rem(40px);
-        }
-    }
-}
-.ar-sd-list{
-    .ar-sd-item{
-        display: flex;
-        flex-direction: column;
-        padding: rem(40px) 0;
-        
-        &:not(:last-child){
-            border-bottom: 1px dashed #e5e5e5;
-        }
-        &--image{
-            position: relative;
-            @include flex-horizontal-center;
-            .ar-item-image-holder{
-                .ar-item-image{
-                    width: 206px; height: 206px;
-                    border-radius: 50%;
-                }
-            }
-            .ar-sd-item-overlay{
-                content: '';
-                @include absCenter;
-                display: block;
-                width: 206px; height: 206px;
-                line-height: 206px;
-                text-align: center;
-                border-radius: 50%;
-                background-color: rgba(254,181,24,0.60);
-                transition: all 500ms ease;
-                opacity: 0;
-                .price{
-                    font-size: rem(24px);
-                    font-weight: 700;
-                    color: $color-white;
-                }
-            }
-        }
-        &--content{
-            padding-top: rem(20px);
-            text-align: center; 
-        }
-        &:hover{
-            .ar-sd-item--image{
-                .ar-sd-item-overlay{
-                    opacity: 1;
-                }
-            }
         }
     }
 }
@@ -227,33 +177,6 @@
         &-body-right{
             .inner-box{
                 padding-left: 0;
-            }
-        }
-    }
-}
-@include breakpoint_up(tablet){
-    .ar-sd-list{
-        .ar-sd-item{
-            flex-direction: row;
-            &--image{
-                flex: 0 0 40%;
-                max-width: 206px;
-            }
-            &--content{
-                flex: 0 1 60%;
-                max-width: 60%;
-                padding-top: 0;
-                text-align: left;
-                margin-left: rem(20px);
-            }
-            &.right{
-                .ar-sd-item--image{
-                    order: 1;
-                }
-                .ar-sd-item--content{
-                    margin-left: 0;
-                    margin-right: rem(20px);
-                }
             }
         }
     }
@@ -295,39 +218,38 @@
         }
     }
 }
-// 7. section gallery
-.ar-gallery{
-    .ar-gallery-inner{
-        padding: 0 rem(10px);
-    }
-}
-.ar-gallery-list{
-    .ar-gallery-item{
-        position: relative;
-        overflow: hidden;
-        .ar-gallery-item-title{
-            position: absolute;
-            left: 0; right: 0;
-            bottom: -100%;
-            padding: rem(50px);
-            transition: all 500ms ease-in-out;
-        }
-        &:hover{
-            .ar-gallery-item-title{
-                bottom: 0;
+// 6.2 Home 2
+@include breakpoint(tablet){
+    .ar-page-home-2{
+        .ar-sd{
+            .ar-menu-list.ar-menu-list-col{
+                .ar-menu-item{
+                    &--image{
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
             }
         }
-        &::before{
-            position: absolute;
-            content: '';
-            left: 0px;
-            top: 0px;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top,rgba(0,0,0,0),rgba(0,0,0,0.6));
-        }
+    }    
+}
+// 6.3 Home 3
+.ar-sd{
+    .ar-sd-title{
+        font-size: rem(24px);
+        color: $color-white;
+    }
+    .ar-carousel .owl-carousel .owl-nav{
+        top: -43px;
+        right: 0;
+        left: auto;
+    }
+    .ar-parallax .ar-parallax-wrap--holder::after{
+        background-color: rgba(13,13,13,0.90);
     }
 }
+// 7. section gallery
 // 8. section delicious
 .ar-delicious-list{
     .ar-delicious-item{
@@ -415,72 +337,72 @@
     }
 }
 // 10.section our blog
-.ar-blog-list{
-    .ar-blog-item{
-        &--top{
-            @include flex-horizontal-center;
-        }
-        .ar-blog-item-meta{
-            ul{
-                @include flex-vertical-center;
-                & > li + li{
-                    margin-left: rem(10px);
-                }
-                & > li{
-                    a{
-                        font-size: rem(14px);
-                    }
-                    &.date{
-                        a{
-                            color: $color-gray-dark;
-                            &:hover{
-                                color: $color-primary;
-                            }
-                        }
-                    }
-                    &.name{
-                        .small{
-                            font-size: rem(12px);
-                            color: $color-gray-dark;
-                            margin-right: rem(5px);
-                        }
-                        a{
-                            color: $color-primary;
-                            &:hover{
-                                color: $color-gray-dark-3;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .ar-blog-item-info{
-            @include flex-vertical-center;
-            justify-content: space-between;
-            .ar-btn-read-more{
-                color: $color-gray-dark-3;
-                font-weight: 700;
-                &:hover{
-                    color: $color-primary;
-                }
-            }
-        }
-    }
-}
 @include breakpoint(tablet){
-    .ar-blog-list .ar-blog-item--top .ar-item-image-holder,
-    .ar-blog-list .ar-blog-item--top .ar-item-image{
-        width: 100%;
+    .ar-blog{
+        .ar-blog-list .ar-blog-item--top .ar-item-image-holder,
+        .ar-blog-list .ar-blog-item--top .ar-item-image{
+            width: 100%;
+        }    
     }
 }
 // 11.section booking (form)
-.ar-booking{
-    .ar-form{
-        .ar-booking-btn-submit{
-            font-size: rem(12px);
-            &:hover{
-                color: $color-white;
-            }
+// 11.1 Home page 2
+.ar-page-home-2{
+    .ar-booking .ar-form .ar-booking-btn-submit{
+        font-size: rem(12px);
+        &:hover{
+            color: $color-white;
         }
+    }
+}
+// 11.2 Home page 3
+.ar-page-home-3{
+    .ar-booking .ar-booking--top .inner-box{
+        border-bottom: 1px solid #e4e4e4;
+    }
+    .ar-booking .ar-booking-title{
+        font-size: rem(22px);
+        font-weight: 700;
+        color: $color-gray-dark-3;
+    }
+    .ar-booking .ar-form .ar-booking-btn-submit{
+        font-size: rem(12px);
+        &:hover{
+            color: $color-primary;
+        }
+    }
+}
+// 12.section chef info
+.ar-section.ar-chef-info{
+    background-image: url('../img/parallax-7.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 5;
+}
+.ar-chef-info{
+    .ar-chef-info-heading{
+        .chef-name{
+            font-family: $font-osward;
+            font-size: rem(30px);
+            color: $color-gray-dark-3;
+        }
+        .chef-pos{
+            font-family: $font-dancingscript;
+            font-size: rem(30px);
+            font-weight: 700;
+            color: $color-primary;
+        }
+    }
+    .ar-social-media-list{
+        .ar-social-media-link{
+            background-color: $color-gray-dark-3;
+        }
+    }
+    &--right{
+        height: 100%;
+        @include flex-horizontal-center;
+        flex-direction: column;
     }
 }
