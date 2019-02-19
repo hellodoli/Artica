@@ -146,6 +146,9 @@
         color: $color-white;
         font-size: rem(36px);
         text-transform: initial;
+        &.order{
+            font-size: rem(30px);
+        }
     }
 }
 
@@ -163,6 +166,9 @@
     }
     .ar-heading--style-3{
         font-size: rem(20px);
+        &.order{
+            font-size: rem(20px);
+        }
     }
     .ar-heading-wrapper{
         margin-bottom: rem(30px);

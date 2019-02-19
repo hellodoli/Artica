@@ -55,12 +55,12 @@
 .ar-about{
     .ar-about-block{
         .row{
-            margin-left: -10px;
-            margin-right: -10px;
+            margin-left: rem(-10px);
+            margin-right: rem(-10px);
         }
         .col-image{
-            padding-left: 10px;
-            padding-right: 10px;
+            padding-left: rem(10px);
+            padding-right: rem(10px);
         }
     }
 }

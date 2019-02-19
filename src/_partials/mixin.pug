@@ -87,13 +87,15 @@ mixin list_menu(list, type)
                                         span(class="price" + " c-"+ type.color)= item.price
                                     p.ar-menu-item-des= item.des
 
-//- Mixin Parallax
+//- Mixin Parallax (Title can't change)
 //- =====================
 //- url: string, ex: 'img/image.jpg'
 //- size = 'small' || 'big' || 'medium'
 //- type = 'full-width' || 'center'
 //- bonusclass = string, ex: 'ar-*'
-mixin parallax(url, size= 'small', type= '', bonusclass = '')
+- var static_title_1 = 'Healthy Fresh And Hot Dishes.';
+- var static_title_2 = 'Best offers from the house chef.';
+mixin parallax(url, size= 'small', type= '', bonusclass = '', title= {main: static_title_1, sub: static_title_2})
     - var klassType = (type !== '') ? ` ${type}` : '';
     - var klassBonus = (bonusclass !== '') ? ` ${bonusclass}` : '';
     section(class="ar-section ar-parallax-image ar-parallax-image--" + size + klassBonus)
@@ -102,8 +104,8 @@ mixin parallax(url, size= 'small', type= '', bonusclass = '')
                 div(class="ar-parallax-wrap ar-parallax-wrap--box" + klassType)
                     if klassType !== ''
                         .ar-parallax-box
-                            h2.ar-heading.ar-heading--style-1 Healthy Fresh And Hot Dishes.
-                            h4.ar-heading.ar-heading--style-3 Best offers from the house chef.
+                            h2.ar-heading.ar-heading--style-1= title.main
+                            h4.ar-heading.ar-heading--style-3= title.sub
                     else
                         .container
                             block

@@ -1,3 +1,4 @@
+//- Home page 1
 mixin about__text
     .ar-about-heading
         .ar-heading-wrapper
@@ -27,6 +28,7 @@ mixin about__carousel
                     .slide
                         img(src="img/slide-1.jpg", alt="about-image-slide-" + (index+1))
 
+//- Home page 2
 mixin about__image
     div(class="wow fadeInLeft")
         .ar-about-block
@@ -63,6 +65,23 @@ mixin about__image__meeting
                 div(class="wow fadeIn", data-wow-delay="300ms")
                     .ar-item-image-holder
                         img.ar-item-image.img-fluid(src="img/meeting-2.jpg", alt="about-image-block-2")
+
+//- About page
+mixin about__about__image
+    .ar-about-block
+        .ar-list-block.ar-column-3
+            .item.col-image
+                div(class="wow fadeIn", data-wow-delay="0ms")
+                    .ar-item-image-holder
+                        img.ar-item-image.img-fluid(src="img/about-1.jpg", alt="about-image-block-1")
+            .item.col-image
+                div(class="wow fadeIn", data-wow-delay="300ms")
+                    .ar-item-image-holder
+                        img.ar-item-image.img-fluid(src="img/about-2.jpg", alt="about-image-block-2")
+            .item.col-image
+                div(class="wow fadeIn", data-wow-delay="600ms")
+                    .ar-item-image-holder
+                        img.ar-item-image.img-fluid(src="img/about-3.jpg", alt="about-image-block-3")
 
 mixin about(left,right)
     section.ar-section.ar-about

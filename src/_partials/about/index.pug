@@ -1,0 +1,36 @@
+//- Use mixin:
+//- 1. +parallax(url, size= 'small', type= '', bonusclass = '',title ={main: '', sub: ''})
+include ../mixin
+//- Use mixin: +about(left,right)
+include ../home/about
+
+main.ar-main
+    article.ar-page
+        // START: parallax 1
+        - var url = 'img/parallax-10.jpg';
+        -
+            var parallax_title = {
+                main: 'Hand-Crafted Dishes Sourced',
+                sub: 'About Us'
+            };
+        +parallax(url, size= 'small', type= 'full-width', bonusclass= '', title= parallax_title)
+        // START: about
+        +about('about__text','about__about__image')
+        // START: parallax 2
+        - var url_2 = 'img/parallax-4.jpg';
+        +parallax(url_2, size= 'small', type= 'full-width')
+        // START: service
+        include ../home/service
+        // START: chef info
+        include ../home/chef-info
+        // START: parallax 3
+        - var url_3 = 'img/parallax-11.jpg';
+        +parallax(url_3, size= 'small', type= '')
+            .d-md-flex.justify-content-md-between.w-100
+                .text-center
+                    h2.ar-heading.ar-heading--style-3.order It's better to visit our place once
+                .text-center.mt-small
+                    .ar-btn-contact.ar-btn.ar-btn--primary.ar-btn--default(href="#") contact us
+    include ../go-to-top
+
+

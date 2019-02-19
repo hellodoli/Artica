@@ -1,0 +1,44 @@
+.ar-page-about{
+    // 1. section parallax first
+    .ar-parallax-image:first-of-type{
+        .ar-parallax .ar-parallax-wrap--holder::after{
+            background-color: rgba(0,0,0,0.60);
+        }
+    }
+    // 2. section about
+    .ar-about .ar-about-block{
+        .ar-list-block{
+            margin: 0 rem(-2px);
+            & > .col-image{
+                padding: 0 rem(2px);
+            }
+        }
+        .ar-list-block.ar-column-3{
+            & > .item:nth-child(-n+3){
+                @include breakpoint(tablet){
+                    margin-top: 0;
+                }
+            }
+            & > .item{
+                @include breakpoint(tablet){
+                    flex: 0 0 33.33333%;
+                    max-width: 33.33333%;    
+                }
+            }
+        }
+    }
+    // 3. section last parallax
+    .ar-parallax-image:last-of-type{
+        .ar-parallax{
+            height: 260px;
+        }
+        .ar-btn-contact:hover{
+            color: $color-white;
+        }
+        @include breakpoint_up(tablet){
+            .mt-small{
+                margin-top: 0
+            }
+        }
+    }
+}
