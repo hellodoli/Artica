@@ -346,32 +346,29 @@
     }
 }
 // 11.section booking (form)
+.ar-booking .ar-booking--top .inner-box{
+    border-bottom: 1px solid #e4e4e4;
+}
+.ar-booking .ar-booking-title{
+    font-size: rem(22px);
+    font-weight: 700;
+    color: $color-gray-dark-3;
+}
+.ar-booking .ar-form .ar-booking-btn-submit{
+    font-size: rem(12px);
+    &:hover{
+        color: $color-primary;
+    }
+}
 // 11.1 Home page 2
 .ar-page-home-2{
     .ar-booking .ar-form .ar-booking-btn-submit{
-        font-size: rem(12px);
         &:hover{
             color: $color-white;
         }
     }
 }
-// 11.2 Home page 3
-.ar-page-home-3{
-    .ar-booking .ar-booking--top .inner-box{
-        border-bottom: 1px solid #e4e4e4;
-    }
-    .ar-booking .ar-booking-title{
-        font-size: rem(22px);
-        font-weight: 700;
-        color: $color-gray-dark-3;
-    }
-    .ar-booking .ar-form .ar-booking-btn-submit{
-        font-size: rem(12px);
-        &:hover{
-            color: $color-primary;
-        }
-    }
-}
+
 // 12.section chef info
 .ar-section.ar-chef-info{
     background-image: url('../img/parallax-7.png');

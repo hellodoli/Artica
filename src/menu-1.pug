@@ -1,0 +1,13 @@
+extends _layouts/home
+
+block head_end
+	// Theme Style
+	link(rel="stylesheet" href="css/style.css")
+	
+block content
+	include _partials/header
+	include _partials/menu/menu-1
+	include _partials/footer
+
+block body_end
+	script(src="js/script.js")

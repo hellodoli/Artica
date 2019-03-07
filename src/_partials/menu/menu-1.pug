@@ -1,0 +1,34 @@
+//- Use mixin:
+//- 1. +list_menu(list, type)
+include ../mixin
+
+-
+    var list_menu = [
+        {src: 'img/menu/dish-1.jpg', name: 'Gosh Egg-White Omelet', price: '$35.40', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/menu/dish-2.jpg', name: 'Powered Turkey Meatballs', price: '$50.00', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/menu/dish-3.jpg', name: 'Creamy Feta Salad Dressing', price: '$85.20', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/menu/dish-4.jpg', name: 'Gosh Egg-White Omelet', price: '$35.40', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/menu/dish-5.jpg', name: 'Powered Turkey Meatballs', price: '$50.00', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/menu/dish-6.jpg', name: 'Creamy Feta Salad Dressing', price: '$85.20', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/menu/dish-7.jpg', name: 'Gosh Egg-White Omelet', price: '$35.40', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/menu/dish-8.jpg', name: 'Powered Turkey Meatballs', price: '$50.00', des: 'Mussel with tomato sauce, wine'},
+        {src: 'img/menu/dish-9.jpg', name: 'Creamy Feta Salad Dressing', price: '$85.20', des: 'Mussel with tomato sauce, wine'},
+    ];
+
+main.ar-main
+    article.ar-page
+        //- start section menu
+        section.ar-section.ar-menu
+            .ar-full-width-wrapper
+                .container
+                    .ar-menu-wrapper
+                        .ar-menu-heading
+                            .ar-heading-wrapper.text-center
+                                h2.ar-heading.ar-heading--style-1 Our Delicious Menu Items Combo
+                                h3.ar-heading.ar-heading--style-2 Fresh And Healthy Food Available
+                        .ar-menu-body
+                            .mb-big
+                                +list_menu(list_menu,{name: 'col', col: 3, color: 'black'})
+                            .text-center
+                                button(type="button").ar-btn.ar-btn--default.ar-btn--primary book my table
+

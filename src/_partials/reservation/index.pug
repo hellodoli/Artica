@@ -1,0 +1,66 @@
+main.ar-main
+    article.ar-page
+        //- copy section booking from ../home/booking change litte bit.
+        //START: booking
+        section.ar-section.ar-booking
+            .ar-full-width-wrapper
+                .container
+                    .ar-booking-wrapper
+                        .ar-booking--top
+                            .inner-box.pb-big
+                                .ar-booking--top-wrapper
+                                    //- Top
+                                    .ar-booking-heading
+                                        .mb-small.text-center
+                                            h2.ar-heading.ar-heading--style-1.order.mb-xsmall Booking a table online is easy
+                                            h3.ar-booking-title Make A Reservation
+                                    .ar-booking-body
+                                        .text-center
+                                            .mb-small
+                                                p.ar-text-paragraph
+                                                    | Booking a table has never been so easy with free & instant online restaurant <br> reservations, booking now!!
+                                            .mb-small
+                                                p.ar-text-paragraph Monday to Friday <time datetime="09:00" class="c-primary">9:00 am</time> <span class="c-primary">-</span> <time datetime="23:00" class="c-primary">23:00 pm</time> Saturday to Sunday <time datetime="10:00" class="c-primary">10:00 am</time> <span class="c-primary">-</span> <time datetime="22:00" class="c-primary">22:00 pm</time> <br> Note: Arctica Restaurant is closed on holidays.
+                                            .ar-text-des.ar-text-des--black.font-weight-bold 0844.335.1211
+                        .ar-booking--bottom
+                            .inner-box.pt-big
+                                .ar-booking--bottom-wrapper
+                                    //- Bottom
+                                    .ar-booking-heading
+                                        .mb-medium.text-center
+                                            h3.ar-booking-title Book Your Table Online
+                                    .ar-booking-body
+                                        .ar-booking-form-wrapper
+                                            // .ar-form
+                                            form.ar-form(action="#", method="#")
+                                                .mb-medium
+                                                    .ar-list-block.ar-column-3
+                                                        .item
+                                                            .ar-form-group
+                                                                input.ar-form-control(type="text", placeholder="Your name*", required)
+                                                        .item
+                                                            .ar-form-group
+                                                                input.ar-form-control(type="email", placeholder="Your email*", required)
+                                                        .item
+                                                            .ar-form-group.has-icon
+                                                                span.icon
+                                                                    i.fas.fa-mobile-alt
+                                                                input.ar-form-control(type="tel", placeholder="Mobile number*", required)
+                                                        .item
+                                                            .ar-form-group.has-icon
+                                                                span.icon
+                                                                    i.far.fa-calendar-alt
+                                                                input.ar-form-control(type="date", placeholder="Date*", required)
+                                                        .item
+                                                            .ar-form-group.has-icon
+                                                                span.icon
+                                                                    i.far.fa-clock
+                                                                input.ar-form-control(type="time", placeholder="Time*", required)
+                                                        .item
+                                                            .ar-form-group.has-icon
+                                                                span.icon
+                                                                    i.fas.fa-user
+                                                                input.ar-form-control(type="number", min="1", placeholder="No. of Persons*", required)
+                                                .text-center
+                                                    button(type="submit", class="ar-booking-btn-submit ar-btn ar-btn--default ar-btn--primary text-uppercase") book now
+    include ../go-to-top

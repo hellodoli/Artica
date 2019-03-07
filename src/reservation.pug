@@ -1,0 +1,17 @@
+extends _layouts/home
+
+block head_end
+	link(rel="stylesheet" href="css/animate.css")
+	// Theme Style
+	link(rel="stylesheet" href="css/style.css")
+	
+block content
+	include _partials/header
+	include _partials/reservation/index
+	include _partials/footer
+
+block body_end
+	script(src="lib/js/wow.min.js")
+
+	script(src="js/custom.js")
+	script(src="js/script.js")

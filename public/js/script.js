@@ -127,13 +127,15 @@ function scrollEffect(){
 };
 
 //click scroll top.
-btnGoToTop.addEventListener('click', function(e) {
-    e.preventDefault();
-    window.scroll({
-        behavior: 'smooth',
-        top: 0
+if(btnGoToTop){
+    btnGoToTop.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scroll({
+            behavior: 'smooth',
+            top: 0
+        });
     });
-});
+}
 
 //Fake navbar calculator.
 function fakeNavCal(){
